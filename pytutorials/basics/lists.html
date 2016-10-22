@@ -1,0 +1,152 @@
+{% extends "base_tutorial.html" %}
+
+
+{% block description %}Here, we'll go over Python's list data type. We will also import some built-in modules and play around with them.{% endblock %}
+{% block keywords %}module, list, statistics, python{% endblock %}
+
+{% block title %}Lists, Tuples, and Dictionaries in Python{% endblock %}
+{% block content %}
+<h2>Composite Data Types</h2>
+<p>In computer science, a "composite data type" is basically a fancy word for describing 
+data types that can contain other data types, like numbers, strings, lists, and so on.
+In Python, composite data types like lists, tuples, and dictionaries can contain virtually
+any other Python object.</p>
+<h2>A Brief Introduction to Lists, Tuples, and Dictionaries</h2>
+<p>These are Python's basic composite data types. Here, there will be a few examples of 
+values that can be stored in them and them some more specific details on their use.</p>
+<h3>Lists</h3>
+<p>Python's lists are like... lists. They can store any number of items of varying type.
+Lists can be <strong>appended</strong> to, i.e. have items added to, at any time.
+Furthermore, its contents are <strong>mutable</strong>. That is, they can be edited.</p>
+<h4>Declaring a List</h4>
+<p>To declare a list simply assign a comma separated list, enclosed in square brackets, to a 
+variable.</p>
+<pre><code>>>> x = [1,2,3]
+>>> x
+[1, 2, 3]
+>>> x = ["a","b","c"]
+>>> x
+['a', 'b', 'c']
+>>> </code></pre>
+
+<h3>Tuples</h3>
+<p>Tuples are ordered pairs of objects. They resemble lists in many ways, but are noticeably different in that:
+<ul>
+<li>They are <strong>immutable</strong>, i.e. their contents cannot be changed</li>
+<li>They are fixed length, which means we can't append to them like lists</li>
+</ul>
+There's a peculiar debate in the Python community over where lists are appropriate and where tuples are,
+but for now, just understand what they are and what their limitations are.</p>
+<h4>Declaring a Tuple</h4>
+<p>To declare a tuple simply assign a comma separated list (normal English meaning), enclosed in parentheses or nothing at all, to a
+variable.</p>
+<pre><code>>>> x = 1,2,3
+>>> x
+(1, 2, 3)
+>>> x = (1,2,3)
+>>> x
+(1, 2, 3)
+>>> </code></pre>
+
+<h3>Dictionaries</h3>
+<p>Dictionaries in Python resemble dictionaries in real life in that they pair items
+with associated values. The items that are paired to values are called <strong>keys</strong>.
+</p>
+<p>For example, if we wanted a dictionary where we associated fruits with their colors,
+we could declare it like this:</p>
+<pre><code>fruits = {
+	'apple': 'red',
+	'orange': 'orange',
+	'blueberry': 'blue',
+	'strawberry': 'red'
+	}</code></pre>
+    
+<p>In general, the syntax for declaring a dictionary is:</p>
+<pre><code>dictionary = {key: value, key: value, ... , key: value}</code></pre>
+<p>Putting every key-value pair on a separate line like I did in the previous example is not necessary, but is considered 
+generally good etiquette as it is easier to read.</p>
+</code></pre>
+
+<h2>Operations on Composite Data Types</h2>
+<p>All composite data types in Python have a set of operations that can be performed on them,
+though the specifics of those operations may differ.</p>
+<h2>Indexing: Accessing Individual Items</h2>
+<p>Every individual item inside a container has an <strong>index</strong>, which is basically 
+a word or number which we can use to retrieve it.</p>
+<h3>List and Tuple Indexing</h3>
+<p>Individual items in lists and tuples can be retrieved by using a number corresponding 
+to their position in the list or tuple.</p>
+<p><strong>This is going to be really confusing but...</strong> the first item in a 
+container has the index 0, not 1. The index 1 refers to the second item. This seemingly strange
+convention is not unique to Python, and can be found in many other programming languages. There is 
+actually a logical explanation for this, which we won't get in to.</p>
+<p><strong>Syntax:</strong> variable_name[index]</p>
+<h4>An example of list and tuple indexing</h4>
+<pre><code>>>> x = [1,2,3]
+>>> x[0]
+1
+>>> x[1]
+2
+>>> x = 1,2,3
+>>> x[0]
+1
+>>> x[1]
+2
+>>> x[2]
+3
+>>> </code></pre>
+<strong>The last item of a list and tuple can be retrieved with the index -1</strong>
+<pre><code>>>> x[-1]
+3</code></pre>
+<h3>Dictionary Indexing</h3>
+<p>We can access individual items in dictionaries with similar syntax to lists,
+except instead of integers, we use the key associated with the value we want to get.</p>
+<p><strong>Syntax:</strong> dictionary_name[key]</p>
+<h4>Example</h4>
+<p>Using the <strong>fruits</strong> example from above:</p>
+<pre><code>>>> fruits["apple"]
+'red'
+>>> fruits["orange"]
+'orange'
+>>> 
+</code></pre>
+
+<h4>Using dict.keys()</h4>
+<p>We can get a list (sort-of) of the indices (keys) of a dictionary using dictionary_name.keys():</p>
+<pre><code>>>> fruits.keys()
+dict_keys(['apple', 'orange', 'strawberry', 'blueberry'])
+>>> fruits.keys()[0]
+Traceback (most recent call last):
+  File "<pyshell#131>", line 1, in <module>
+    fruits.keys()[0]
+TypeError: 'dict_keys' object does not support indexing
+>>> list(fruits.keys())
+['apple', 'orange', 'strawberry', 'blueberry']
+>>> list(fruits.keys())[0]
+'apple'
+>>> </code></pre>
+<p>As you may have already inferred, the object returned by dict.keys() is not a list,
+but can be easily converted to one.</p>
+
+<h2>Insertion: Adding New Items</h2>
+<h3>Lists</h3>
+<p>...</p>
+<h3>Tuples</h3>
+<p>As mentioned earlier, tuples are of fixed length, so you can't add new items to a tuple.</p>
+<h3>Dictionaries</h3>
+<p><strong>Syntax:</strong> dictionary_name[key] = value</p>
+<h4>Example</h4>
+<p>Using our <strong>fruits</strong> example again, we'll add another entry into our dictionary:
+</p>
+<pre><code>>>> fruits
+{'apple': 'red', 'orange': 'orange', 'strawberry': 'red', 'blueberry': 'blue'}
+>>> fruits["watermelon"] = "green"
+>>> fruits
+{'apple': 'red', 'orange': 'orange', 'strawberry': 'red', 'watermelon': 'green', 'blueberry': 'blue'}
+>>> 
+</code></pre>
+
+<h2>Iteration</h2>
+<!-- Write an article about this -->
+
+{% endblock %}

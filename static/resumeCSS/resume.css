@@ -1,0 +1,47 @@
+body {
+	font-family: 'Oswald', Arial, sans-serif;
+	margin-left: auto;
+	margin-right: auto;
+	background: #fcfff5;
+	font-size: 14pt;
+	color: #193441;
+}
+
+h1 { color: #3e606f; }
+
+/*** Resume content ***/
+h3 {
+	text-transform: uppercase;
+	overflow: hidden;
+	text-overflow: ellipsis; 
+	color: #193441;
+	font-weight: normal;
+	border-bottom: 4px solid #d1dbbd;
+	}
+	
+h4 { color: #91aa9d; font-weight: normal; color: #3E606F; }
+
+div > h3 { margin-bottom: 0.5em; font-size: 1.3em; }
+h4 { font-size: 1.1em; margin-top: 0.4em; margin-bottom: 0;  }
+h4 > span { font-weight: lighter; float: right; }
+span > span { letter-spacing: -1px; }
+h3 + p, h4 + p, ul { margin-top: 0.2em; font-weight: lighter; }
+
+/** List styling **/
+ul { list-style-type: none; padding: 0; }
+ul > li:before { content: " > "; }
+
+/* Undoes bullet from above */
+li.listHeader:before, li.listHeader + li:before { content: ""; }
+
+ul > li { font-weight: lighter; }
+li > ul { margin-left: 1em; margin-top: 0; }
+p + ul { margin-left: 1em; margin-top: -1em; }
+/* End of list styling */
+
+/** Print settings **/
+@media print {
+	body { width: 100%; font-size: 12pt; }
+	#contact { right: 0%; }
+	}
+/* End of print settings */

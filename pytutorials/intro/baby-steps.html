@@ -1,0 +1,79 @@
+{% extends "base_tutorial.html" %}
+
+{% block title %}Getting Your Feet Wet: Installing and Using Python for the First Time{% endblock %}
+{% block content %}
+<h2>What is a Boolean statement?</h2>
+<p>From Wikipedia:
+<blockquote>In computer science, a Boolean expression is an expression in a programming 
+language that produces a Boolean value when evaluated, i.e. one of true or 
+false.</blockquote>
+
+Boolean statements are named after George Boole, who thought of the idea of representing
+false statements as 0s, and true statements as 1s. This simple idea is now what underpins
+all of modern computing.</p>
+
+<h3>Why do we use them?</h3>
+<p>As you may have seen earlier, a lot of times when writing functions, we want to 
+do one thing if a certain condition is true, but another thing is it is false.</p>
+<p>We evaluate "Boolean statements" in our everyday lives as well. For example,
+before walking out the door, you might evaluate something like,
+"If it there are zombies outside, I will grab my gun. Otherwise, I'll leave it home."
+This statement can be translated into Python-like pseudocode (fake code) like this:
+</p>
+<pre><code>proposition = "There are zombies"
+if proposition is True:
+    get_weapon("rifle")
+    get_weapon("flamethrower")
+else:
+    do_nothing()
+    live_normally()
+</code>
+</pre>
+<p>In the previous example, the Boolean statement was the proposition "there are zombies."
+This proposition has two values, <strong>True</strong> or <strong>False</strong>.
+The <strong>if</strong> branch of our program executes if the proposition is True. The <strong>else</strong> branch
+executes if it is False.</p>
+<p>Also notice the capitalization of <strong>True</strong> and <strong>False</strong>. This 
+is because Python has these keywords reserved to refer to the potential values of Boolean statements.
+Anytime you want to refer to Boolean values, you should always use True or False capitalized in that way.
+Likewise, you should never use True or False as variable, function, etc. names.</p>
+
+<h2>Branching Out with Control Flow</h2>
+<p>If, else-if, and else statements allow us to create more complex and useful functions and 
+programs in Python. Rather than giving an explicit definition, an example is probably most instructive.
+
+
+Add more later...</p>
+
+<h2>A Cool Trick with Boolean Statements</h2>
+<p>In Python, empty strings, lists, dicts, and other container objects evaluate to <strong>False</strong>.</p>
+<pre><code>>>> bool("Just gonna stand there and watch me burn")
+True
+>>> bool([1,2,3,4,5])
+True
+>>> bool({"staples":500,"pens":10,"notebooks":5,"post-its":200})
+True
+>>> bool("")
+False
+>>> bool([])
+False
+>>> bool({})
+False
+</code></pre>
+
+<h3>Why does this matter?</h3>
+<p>There are many times when we're coding where we will need to check if, for example,
+a list is empty or not. In Python, we have a neater, shorter way
+to check if something contains items or not.</p>
+
+<h4>Example</h4>
+<p>Instead of:</p>
+<pre><code>if len(my_list) not 0</code></pre>
+
+<p>Simply use:</p>
+<pre><code>if len(my_list)</code></pre>
+
+{% endblock %}
+ 
+{% block submenu %}
+{% endblock %}

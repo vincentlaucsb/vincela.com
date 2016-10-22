@@ -1,0 +1,3 @@
+CONTENTS = [
+    'phone-book.html'
+]

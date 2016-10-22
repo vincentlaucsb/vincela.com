@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    color: #333333;
+    background-color: #F5F5F5;
+}
+
+/** Header Fonts **/      
+h1, h2, h3, h4 {
+    font-family: Merriweather, Georgia, serif;
+}
+
+h1 {
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+h1 {
+    color: rgb(25,52,65);
+}
+
+h2, h3, h4 {
+    color: rgb(62,96,111);
+}
+
+h3, h4 {
+    font-weight: 300;
+}
+
+/** End Header Fonts **/
+
+/** General Link Styling */
+a {
+    color: rgba(25,52,65,1);
+    text-decoration: none;    
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/** End of link styling **/
+
+
+/** Transitions **/
+header, footer, article {
+    transition: width 2s, padding 2s;
+}
+/** End Transitions **/
+
+/** Header **/
+header, footer { font-family: Montserrat, sans-serif; }
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Immediate descendents (<div>) */
+header > * {
+    width: 100%;
+}
+
+/* All descendents */
+header * {
+    font-family: inherit;
+    color: inherit;
+}
+
+#logo {    
+    /* As a flexbox */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1.2em;
+}
+
+#logo h1 {
+    text-transform: uppercase;
+}
+
+#logo h1 span {
+    letter-spacing: 0.04em;
+}
+
+#logo h1 a:hover {
+    text-decoration: none;    
+}
+
+/* Immediate descendents */
+#logo > * {
+    width: 50%;
+    margin: 0;
+}
+
+#logo nav > a {
+    display: inline-block;
+    padding: 0em 1em 0 1em;
+    /*margin: auto 1em auto 1em;*/
+}
+
+/** End of Header **/
+
+/** Footer **/
+footer {
+    font-family: Montserrat, sans-serif;
+    font-size: 90%;
+    color: rgba(145,170,157,1);
+    background: rgba(25,52,65,1);
+    margin-top: 4em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+footer * {
+    font-family: inherit;
+    color: inherit;
+}
+
+#footer-menu {
+    width: 40em;
+    margin: auto;
+    text-align: center;
+    display: block;
+}
+
+#footer-menu > a {
+    margin: 1em;
+    color: inherit;
+}
+
+footer img {
+    opacity: 0.5;
+    height: 32px;
+    margin: auto 4px auto auto;
+    transition: opacity 1s;
+}
+
+footer img:hover {
+    opacity: 1;    
+}
+/** End of Footer **/

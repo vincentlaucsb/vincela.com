@@ -1,0 +1,162 @@
+{% extends "base_tutorial.html" %}
+
+{% block title %}Creating Your Own Functions{% endblock %}
+{% block description %}This article introduces the use of functions in Python.{% endblock %}
+{% block keywords %}function, Python{% endblock %}
+
+{% block content %}
+
+<h2>What are functions?</h2>
+<p>You may be familiar with an analogy from algebra class that a math function is like
+a "machine" that takes in a number, performs some operations on it, and spits the result back out. 
+Likewise, functions in Python can be thought of in the same way, except that they can also:
+<ul>
+<li>Take in many types of input, not just numbers</li>
+<li>Do much more interesting things than just add and multiply numbers</li>
+</ul>
+Furthermore, not all Python functions necessarily have an output. They may modify the input 
+in some way, but they may not actually return anything. This is a concept we'll elaborate more 
+on later.
+</p>
+
+<h3>Examples of functions</h3>
+<p>Python is a general-purpose language, i.e. it can be used for many different things. As a result,
+practical examples of Python functions include functions that:
+<ul>
+<li>Take in a list of numbers and returns the mean or variance</li>
+<li>Take in an order from an online shopper and calculates the shipping cost</li>
+<li>Take in specific dimensions to draw a shape</li>
+</ul>
+Because of the versatility of the language, functions are used in all sorts of ways,
+but the one thing they all have in common is that they all take in an input and do something with it.
+
+</p>
+
+<h2>Declaring Functions</h2>
+<p>All Python functions have the same main parts. They all:
+<ul>
+<li>Start with the keyword <strong>def</strong> (as in function definition), which tells Python you're about to declare a function</li>
+<li>Parameters enclosed in parenthesis</li>
+    <ul>
+    <li>If you function doesn't take in parameters, you'll still need to use () or else you'll get a <strong>SyntaxError</strong></li>
+    </ul>
+<li>Have lines of code following the initial declaration that are indented</li>
+<li>
+    <ul><li>These indented lines are keywords or other functions which dictate what this function does</li></ul>
+</li>
+</ul> 
+
+</p>
+<h3>Example: A simple function</h3>
+<pre><code>def hi():
+    print("Hello world!")
+</code></pre>
+<h3>Example 2: A function that takes in an input</h3>
+<p>The inputs passed to a function are called <strong>arguments</strong>, and can be referred to
+much in the same way that you would use variables.</p>
+<pre><code>def hi(name):
+    print("Hello world!")
+    print("My name is " + name + "!")
+</code></pre>
+<h4>Output</h4>
+<pre><code>>>> hi("Simple Jack")
+Hello world!
+My name is Simple Jack!
+>>></code></pre>
+<h4>Use parentheses to call a function</h4>
+<p>When we <strong>call</strong> a function, we are invoking the function to do what we want it 
+(programmed it) to do. Calling a function is always of the form:
+my_function_name()</p><p>
+If you don't use parentheses, Python will return an <em>object reference</em> to that function, like:</p>
+<pre><code>>>> hi
+&lt;function hi at 0x000000000434A730&gt;
+</code></pre>
+<p>You don't need to know what an object reference is yet. Just remember that you should always place ()
+next to your function's name to call it.</p>
+<h3>Example 3: A function that takes in multiple inputs</h3>
+<pre><code>def less_than(x,y):
+    if (x < y):
+        print(x,"is less than",y)
+    elif (x == y):
+        print(x,"is equal to",y)
+    else:
+        print(x,"is greater than",y)
+</code></pre>
+<p>For more explanation about how this example function works, see <a href="booleans">Boolean Statements and Control Flow</a>.
+<h4>Output</h4>
+<pre><code>>>> less_than(5,100)
+5 is less than 100
+>>> less_than(5,5)
+5 is equal to 5
+>>> less_than(5,4)
+5 is greater than 4
+>>></code></pre>
+<h3>Example 4: A function with optional arguments</h3>
+<p>In the above example, all of the arguments are required, i.e. Python will return
+an error message if you specify less than the required number of arguments.</p>
+<pre><code>>>> less_than(5)
+Traceback (most recent call last):
+  File "&lt;pyshell#69&gt;", line 1, in &lt;module&gt;
+    less_than(5)
+TypeError: less_than() missing 1 required positional argument: 'y'
+>>> 
+</code></pre>
+<p>If you want to declare a function with an optional argument, you can do so by 
+specifying a default value which Python will use if a value is not provided when
+the function is called, e.g.:</p>
+<pre><code>def berate(text="the truth!"):
+    print("You can't handle",text)
+</code></pre>
+<h4>Output</h3>
+<pre><code>>>> berate()
+You can't handle the truth!
+>>> berate(text="the facts!")
+You can't handle the facts!
+>>> </code></pre>
+<h3>Example 5: Combining required and optional arguments</h3>
+<pre><code>def increment(number,increase_by=1):
+    return number + increase_by
+</code></pre>
+<h4>Output</h4>
+<pre><code>>>> increment(5)
+6
+>>> increment(5,10)
+15
+>>> </code></pre>
+
+<h4>Optional arguments should always follow required arguments</h4>
+<p>Python just doesn't like it the other way around:</p>
+<pre><code>>>> def increment(increase_by=1,number):
+    return number + increase_by
+SyntaxError: non-default argument follows default argument
+</pre></code>
+<p>By the way, you can declare functions in IDLE's command line if you haven't realized already.</p>
+
+<h3>Can we declare functions with arbitrary inputs?</h3>
+<p>Is it possible to create a function that could take anywhere from zero to an infinite 
+number of possible arguments, or a function that takes in different sets of arguments? Yes,
+but this all requires a slightly deeper understanding of Python, so I'll just tease the reader 
+with this example for now:</p>
+<pre><code class="nohighlight">>>> breakfast("green eggs","ham")
+Today for breakfast I had green eggs, and ham.
+>>> breakfast("eggs","hash browns","sausage","coffee")
+Today for breakfast I had eggs, hash browns, sausage, and coffee.
+>>> breakfast("water","stale bread")
+Today for breakfast I had water, and stale bread.
+>>> </code></pre>
+<h2>Some Closing Notes</h2>
+<p>Python functions are very flexible and can be created to match a myriad of needs.
+As a result, functions are the backbone of everything useful we want to do in Python.</p>
+<h3>Some Advice on Naming Things</h3>
+<p>Obviously, you can name your functions anything you want. But calling a function something like xyz123() is a disservice to: 
+<ul>
+<li>Other people who might have to read your code</li>
+<li>Your future self, say a few days later, who forgot what you were trying to code</li>
+</ul>
+<p>
+As you may have noticed, I did not bother to describe what my functions did as it 
+was obvious from the examples and their names what they did. Now this might not always be the case,
+especially if the project that you are working on exceeds hundreds of even thousands of lines of code.
+However, you should generally name your functions and variables after their intended use.
+</p>
+{% endblock %}

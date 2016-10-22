@@ -1,0 +1,9 @@
+<h1>Manipulating Text with CSS</h1>
+<h2>Using Stylesheets</h2>
+There are multiple ways of bolding, italicizing, or underlining text with HTML and CSS.
+{{ codeblock default={{This text is bolded.<br />&#10;This text is italicized.<br />&#10;This text is underlined.}} solution={{<strong>This text is bolded.</strong></br />&#10;<em>This text is italicized.</em><br />&#10;<span style="text-decoration: underline">This text is underlined.</span>}}}}
+
+<h2>Coloring Text</h2>
+<p>Try to replicate this output:</p>
+<p><span style="color:blue">Steph</span> <span style="color:yellow">Curry</span> with the shot.</p>
+{{ codeblock default={{<p>Steph Curry with the shot.</p>}} solution={{<p><span style="color:blue">Steph</span> <span style="color:yellow">Curry</span> with the shot.</p>}}}}

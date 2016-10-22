@@ -1,0 +1,91 @@
+{% extends "base_tutorial.html" %}
+
+{% block description %}If you're a C++ programer and were expecting to see something about the data structure, sorry to disappoint. We're talking about vectors as seen in math and physics.{% endblock %}
+{% block keywords %}python, class, magic methods, operator overloading{% endblock %}
+{% block title %}Implementing Vectors in Python{% endblock %}
+{% block content %}
+<p>If you're a C++ programer and were expecting to see something about the data structure, sorry to disappoint.
+We're talking about <em>vectors</em> as seen in math and physics.</p>
+<h2>Goal</h2>
+<p>We can easily add numbers together in Python. In fact, we can do a lot of useful mathematical operations without 
+installing extra packages. However, we haven't been able to do vector arithmetic because vectors didn't exist in
+Python... until now:</p>
+
+<pre><samp>>>> a = Vector(1,1,1)
+>>> b = Vector(1,1,1)
+>>> c = Vector(2,3,4)
+>>> a
+<1,1,1>
+>>> c
+<2,3,4>
+>>> a==b
+True
+>>> a.norm()
+1.7320508075688772
+>>> c.norm()
+5.385164807134504
+>>> a-b
+<0,0,0>
+>>> b-a
+<0,0,0>
+>>> c-a
+<1,2,3>
+>>> a-c
+<-1,-2,-3>
+>>> 
+</samp></pre>
+<h2>Game Plan</h2>
+<p>This tutorial is undoubtedly complex, and I too ran into a few hiccups while 
+coding the solution to this. That being said, this tutorial will be very rewarding as it will cover 
+many useful Python features. Like previous tutorials, the finished product is implemented incrementally. 
+While it may seem like the steps are in arbitrary order, they are assuredly not--implementing previous steps 
+will make implementing following steps simpler. But before diving in, let's explain some basic ideas behind 
+what we are trying to do here.</p>
+
+<h3>Everything in Python is an Object</h3>
+<p></p>
+
+<h3>Objects were meant to be rewritten</h3>
+
+
+<h2>Part 1: __repr__()</h2>
+<h2>Solution</h2>
+<p>After implementing all of the previous functions, your Vector class might look something like this.
+Now this vector is missing a lot of operations we would normally want to perform on vectors. We'll implement them 
+in the second part of this tutorial.</p>
+<p>View Solution <button class="solution-trigger"></button></p>
+<pre class="spoiler" id="solution"><code>import math
+
+class Vector:
+    def __init__(self,x,y,z=0):
+        self.x = x
+        self.y = y
+        self.z = z
+    def __repr__(self):
+        return "<{0},{1},{2}>".format(self.x,self.y,self.z)
+    def __eq__(self,other):
+        if (self.x == other.x) and (self.y == other.y) and (self.z == other.z):
+            return True
+        else:
+            return False
+    def __add__(self,other):
+        x_sum = self.x + other.x
+        y_sum = self.y + other.y
+        z_sum = self.z + other.z
+        return Vector(x_sum,y_sum,z_sum)
+    def __sub__(self,other):
+        subtract = Vector(-other.x,-other.y,-other.z)
+        return self + subtract
+    def norm(self):
+        return math.sqrt(self.x**2 + self.y**2 + self.z**2)
+
+</code></pre>
+{% endblock %}
+ 
+{% block submenu %}
+<h2>Additional Resources</h2>
+<ul>
+<li><a href="http://www.rafekettler.com/magicmethods.html">A <em>very</em> exhaustive
+list of Python's magic methods</a></li>
+</ul>
+{% endblock %}

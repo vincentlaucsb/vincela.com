@@ -1,0 +1,221 @@
+<html>
+<head>
+<title>Vincent La's Resume</title>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+<style type="text/css">
+body {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    max-width: 45em;
+    line-height: 1.5;
+    margin: 2em auto 10% auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    color: #333333;
+    background-color: rgba(0,0,0,.02);
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, #contact, #more-contact {
+    font-family: Montserrat, sans-serif;
+}
+
+h2 { text-transform: uppercase; }
+
+h3 > span:not(.subtitle) {
+    font-weight: normal;
+    float: right;
+}
+
+h3 em {
+    font-size: 90%;
+}
+
+h4 { margin-bottom: 0; }
+
+/* Header: Name and Contact Info */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+header > * {
+    margin: 0;
+}
+
+#contact {
+    text-align: right;
+}
+
+#contact * {
+    margin: 0.2em;
+}
+
+#name {
+    text-transform: uppercase;
+    font-size: 3.5em;
+    /* This is what makes my name stay at the top */
+    align-self: center;
+}
+
+#more-contact {
+    margin-bottom: 4em;
+}
+
+/* End Header */
+
+/* Resume Body */
+section + section {
+    margin-top: 3em;
+}
+
+.subtitle {
+    font-style: italic;
+    margin-top: -1em;
+}
+/* End of Resume Body */
+
+/* Skills Section */
+#skills-box {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
+
+#skills-box > section {
+    /*min-width: 20em;*/
+    width: calc(50% - 1em); /* 100% divided by number of columns minus padding */
+    padding-right: 1em;
+}
+
+#skills-box > section, #skills-box h3 {
+    margin: 0;
+}
+
+#skills-box li > ul {
+    padding: 0.1em 0 0.1em 1em;
+}
+/* End of skills */
+
+/* General List Styling */
+ul {
+    list-style-type: square;
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+li > ul li { list-style-type: none; }
+li > ul li:before { content: "\2013\00a0 "; }
+/* End of list styling */
+
+/* Responsive CSS Settings */
+@media(max-width: 700px) {
+    h3 > span:not(.subtitle) {
+        float: none;
+        display: block;
+    }
+    #skills-box > section { width: 100%; }
+    #contact { text-align: left; }
+}
+
+@media print {
+    body { 
+        font-size: 11pt;
+        margin: 0;
+        padding: 0;
+    }
+    #name {
+        font-size: 3em;
+    }
+}
+
+</style>
+</head>
+<body>
+<header>
+    <h1 id="name">Vincent <!-- Looks terrible don't do it: <span style="font-weight: normal">-->La<!--</span>--></h1>
+    <div id="contact">
+        <p>820 Camino Corto Apt 7<br />
+        Isla Vista, CA 93117<br />
+        (510) 759-4305<br />
+        <a href="mailto:vincela9@gmail.com">vincela9@gmail.com</a></p>
+    </div>
+</header>
+<p id="more-contact"><a href="https://www.linkedin.com/in/vincent-la-sb">www.linkedin.com/in/vincent-la-sb</a></p>
+
+<section>
+    <h2>Summary</h2>
+    <p>I am a skilled and motivated student with a diverse intellectual background looking for employment in a team setting.</p>
+</section>
+<section>
+    <h2>Education</h2>
+    <h3>University of California, Santa Barbara <span>2013 - 2017 <em>(expected)</em></span></h3>
+    <p class="subtitle">Economics/Mathematics</p>
+    <p>
+        <ul>
+            <li>Minors in Statistical Science and Philosophy <em>(in progress)</em></li>
+            <!--<li>Other Relevant Coursework: Problem Solving with Computers I-II</li>-->
+        </ul>
+    </p>
+    <h3>Oakland High School <span>2009 - 2013</span></h3>
+</section>
+<section>
+    <h2>Skills</h2>
+    <div id="skills-box">
+        <section>
+            <h3>General</h3>
+            <ul><li>Can work as part of a team or independently</li>
+                <li style="list-style-type: none;">
+                    <ul>
+                    <li>Resourceful</li>
+                    <li>Self-driven, while still being able to communicate my goals and mehods to others</li>
+                    </ul>
+                </li>
+            <ul>
+                <li>Organized and detail-oriented</li>
+                <li>Can write clearly, concisely, and with intent</li>
+                <li style="list-style-type: none;"><ul><li>SAT Writing: 690 (Overall: 2100)</li></ul></li>
+            </ul>
+        </section>
+        <section>
+            <h3>Technical</h3>
+            <ul>
+                <li>Basic reassembly of computer hardware</li>
+            </ul>
+            
+            <h4>Software and Languages</h4>
+            <ul>
+                <li><strong>Advanced:</strong></li>
+                <li style="list-style-type: none;"><ul>
+                    <li>HTML/CSS</li>
+                    <li>Python</li>
+                    <li>Microsoft Office</li>
+                </ul></li>
+                <li><strong>Proficient:</strong> JavaScript, C++, LaTeX</li>
+            </ul>            
+        </section>
+    </div>
+</section>
+<!--<section>
+    <h2>Portfolio</h2>
+    <h3>Blah</h3>
+    <p>Blah</p>
+</section>-->
+<section>
+    <h2>Work Experience</h2>
+    <h3>East Bay Asian Youth Center <span>2013</span></h3>
+</section>
+</body>
+</html>

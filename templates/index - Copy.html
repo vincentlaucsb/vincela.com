@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="author" content="Vincent La">
+<head>
+    <title>Vincent La</title>
+
+    {% load staticfiles %}
+	<style type="text/css">body { background-image: url('{% static "background.png" %}'); }</style>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    
+	<link href="{% static "index_css/index.css" %}" media="all" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet' type='text/css'>
+	<link href="{% static "index_css/index_landscape.css" %}" media="(orientation: landscape)" rel="stylesheet" type="text/css">
+	<link href="{% static "index_css/index_portrait.css" %}" media="(orientation: portrait)" rel="stylesheet" type="text/css">
+    <style type="text/css">
+	/* Highlight urls we are on */
+	a#currentPage, nav > a[href*="{{ request.path }}"] {
+		background: rgba(145,170,157, 1);
+	}
+	</style>
+</head>
+<body>
+	<div id="overlay"></div>
+
+
+	<div id="content">
+	<h1 class="hvr-glow" id="name"><span class="condensed">Vincent</span> La</h1>
+	
+	<nav class="alignRight">
+    {% for key, values in menu.items %}
+       <a class="hvr-float-shadow hvr-back-pulse" href="{{ values.url }}">{{ key }}</a>
+    {% endfor %}
+    </nav>
+	</div>
+
+</body>
+</html>

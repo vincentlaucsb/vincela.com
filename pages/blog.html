@@ -1,0 +1,104 @@
+{% extends "presentation.html" %}
+
+{% load static %}
+
+{% block morehead %}
+<style type="text/css">
+    /** Page specific styling **/
+    header {
+        /*background-color: #D8E4E9;*/
+        background: url({% static 'inspiration_point.JPG' %});
+        background-size: 100vw;
+    }
+    
+    /* Georgia could be a bit biggger */
+    article p {
+        font-size: 14pt;
+    }
+    
+    #logo, #logo h1 a {
+        color: rgba(25,52,65,0.8);
+    }
+
+    #logo h1 span {
+        color: rgba(25,52,65,0.6);
+    }
+
+    #title {
+        text-align: center;
+        color: rgba(252,255,245,1);
+    }
+    
+    #projects {
+        margin-top: 4em;
+    }
+    
+    #projects > div > * {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    
+    .img {
+        max-width: 200px;
+        flex-grow: 1;
+    }
+    
+    /* Target the second div */
+    #projects > div > div:not(.img) {
+        flex-grow: 2;
+    }
+    
+    #projects > div {
+        padding-top: 1.8em;
+        padding-bottom: 1.8em;
+        border-top: 1px solid rgba(62,96,111,0.2);
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    #projects h1 {
+        margin: 0;
+    }
+    
+    .big-button {
+        font-family: Montserrat;
+        font-size: 12pt;
+        padding: 0.5em;
+        border-radius: 0.2em;
+        background: rgba(62,96,111,1);
+        color: rgba(252,255,245,1);
+        transition: background 2s;
+    }
+    
+    .big-button:hover {
+        background: rgba(145,170,157,1);
+        text-decoration: none;
+    }
+    </style>
+{% endblock %}
+{% block title %}Blog{% endblock %}
+{% block header %}Blog{% endblock %}
+
+{% block content %}
+<div id="projects">
+    <div>
+        <div class="img">
+        <img src="{% static 'python-logo-master-v3-TM.png' %}" style="width: 200px" >
+        </div>
+        <div>
+        <h1><a href="../python/">Python Tutorials</a></h1>
+        <p>Here's a series of tutorials on the Python language.</p>
+        <p style="width: 100%; text-align: right;"><a href="../python/" class="big-button">Learn more</a></p>
+        </div>
+    </div>
+    <div>
+        <div>
+        <h1>spoiler.js</h1>
+        <p>Some spoiler effects I write using pure JavaScript and CSS.</p>
+        <p style="width: 100%; text-align: right;"><a href="../python/" class="big-button">Try it out</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

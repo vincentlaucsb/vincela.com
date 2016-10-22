@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="author" content="Vincent La">
+<meta name="description" content="{{ description }}">
+<head>
+    <title>{% block title %}{% endblock %} - Vincent La </title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+    {% load static %}
+    <link href='{% static "base_css/base.css" %}' rel='stylesheet' type='text/css'>
+    <link href='{% static "base_css/base_portrait.css" %}' media='(max-width: 699px)' rel='stylesheet' type='text/css'>
+    <link href='{% static "base_css/base_landscape.css" %}' media='(min-width: 700px)' rel='stylesheet' type='text/css'>
+    {% block morehead %}{% endblock %}
+    <style type="text/css">
+        #github {
+            background-image: url({% static 'github.png' %});
+        }
+
+        #linkedin {
+            background-image: url({% static 'linkedin.png' %});
+        }
+    </style>
+    </head>
+<body>
+    <div id="head">
+        <h1><a href="../"><span style="color: rgba(209,219,189,1)">Vincent</span> La</a></h1>
+        <nav>
+        {% for key, values in menu.items %}<a href="{{ values.url }}">{{ key }}</a>{% endfor %}
+        </nav>
+    </div>
+    <div id="content_wrap">
+        <div id="page_title">
+            {% block page_title %}
+            <h1>{% block header %}{% endblock %}</h1>
+            {% endblock %}
+        </div>
+        <div id="article_content">
+            <div id="content">
+            {% block content %}
+            {% endblock %}
+            </div>
+            <div id="submenu">
+            {% block submenu %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p>&copy; 2016 Vincent La</p>
+    </div>
+</body>
+</html>

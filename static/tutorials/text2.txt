@@ -1,0 +1,6 @@
+<h1>Manipulating Text with CSS (Part 2)</h1>
+<h2>Bold, Italic, and Underlined Text</h2>
+<h3>Using Stylesheets</h3>
+With stylesheets we can do cool things.
+
+{{ codeblock default={{<style type="text/css">strong { font-weight: normal; color: red; }</style>}} solution={{<strong>Test</strong>}}}}

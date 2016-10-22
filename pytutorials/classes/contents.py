@@ -1,0 +1,3 @@
+CONTENTS = [
+    'vector-class.html'
+]

@@ -1,0 +1,36 @@
+{% extends "base_tutorial.html" %}
+
+{% block description %}In this exercise you use the principles of flow of control to create a function that 
+tells you how the weather feels like based on the temperature.{% endblock %}
+{% block keywords %}weather, python, control flow, if, else{% endblock %}
+{% block title %}What's the Weather?{% endblock %}
+{% block content %}
+<p>In this exercise you use the principles of flow of control to create a function that 
+tells you how the weather feels like based on the temperature.</p>
+
+<h2>Solution</h2>
+<pre><code class="Python">def weather(temp):
+    # Allows user to input 70F or 70f for example
+    temp = temp.lower()
+    if temp[-1] != "f" and temp[-1] != "c":
+        print("Please enter a temperature and specify if it is in Farenheit or Celsius.")
+    elif (temp[-1] == "f"):
+        weather_farenheit(float(temp))
+    else:
+        # On some older versions of Python 9/5 = 1
+        weather_farenheit(float(temp) * (9.0/5.0) + 32)
+        
+# Input: temperature is an integer or float
+def weather_farenheit(temp):
+    if temp < 40:
+        print("It's really cold!")
+    elif temp >= 40 and temp < 65:
+        print("It's a little bit chilly, I think I'll get a jacket.")
+    elif temp >= 65 and temp < 80:
+        print("It's nice and warm today.")
+    else:
+        print("It's hot today!")
+</code></pre>
+{% endblock %}
+{% block submenu %}
+{% endblock %}
