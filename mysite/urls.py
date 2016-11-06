@@ -31,9 +31,15 @@ urlpatterns = [
     url(r'^aboutme/', views.FlatPage.as_view(template_name="aboutme.html")),
     url(r'^blog/', views.FlatPage.as_view(template_name="blog.html")),
     url(r'^projects/', views.FlatPage.as_view(template_name="projects.html")),
-    url(r'^resume/', views.FlatPage.as_view(template_name="resume.html")),
+    url(r'^resume/$', views.FlatPage.as_view(template_name="resume.html")),
+    url(r'^resume/research', views.FlatPage.as_view(template_name="resume_research.html")),
     url(r'^python/$', views.Python.as_view())
 ]
+
+# Tutorials Table of Contents Pages
+sections = ["intro","basics","functions","classes","appendix"]
+for section in sections:
+    urlpatterns.append(url(r'^python/' + section + '/$',views.SectionTOC.as_view()))
 
 # Auto-create tutorial URL mappings #
 for tutorial in views.TUTS_MENU:
@@ -43,10 +49,12 @@ for tutorial in views.TUTS_MENU:
     filename = tutorial_url + ".html"
     if ('quiz' in tutorial_url):
         TUTORIALS_LOG.info('[{0}] Mapping to quiz view at {1}'.format(__name__,tutorial_url))
-        urlpatterns.append(url(r'^python/' + tutorial_url, views.Quiz.as_view()))
+        urlpatterns.append(url(r'^python/' + tutorial_url + '/', views.Quiz.as_view()))
+        # Note: The "+ '/'" after tutorial_url prevents, for example, /loop/ and /loop-practice/ 
+        # from mapping to the same template
     
     # Regular tutorials #
     else:
         template = menu[tutorial]["template"]
         TUTORIALS_LOG.info('[{0}] Mapping to tutorial view at {1} with template {2}'.format(__name__,tutorial_url,template))
-        urlpatterns.append(url(r'^python/' + tutorial_url, views.Tutorial.as_view(template_name=template)))
+        urlpatterns.append(url(r'^python/' + tutorial_url + '/', views.Tutorial.as_view(template_name=template)))

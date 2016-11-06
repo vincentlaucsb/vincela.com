@@ -12,6 +12,7 @@
     <link href='{% static "shared_css/shared.css" %}' rel='stylesheet' type='text/css'>
     <link href='{% static "base_css/base.css" %}' rel='stylesheet' type='text/css'>
     <link href='{% static "base_css/base_responsive.css" %}' rel='stylesheet' type='text/css'>
+    <link href='{% static "tutorial_css/tutorial.css" %}' rel='stylesheet' type='text/css'>
     <link href='{% static "tutorial_css/tutorial_print.css" %}' rel='stylesheet' media='print' type='text/css'>
     
     <!-- Syntax highlighting -->
@@ -20,8 +21,8 @@
     <script>hljs.initHighlightingOnLoad();</script>
     <!-- End of syntax highlighting -->
     
-    <!-- Fade-in menu effects -->
     <style type="text/css">
+        <!-- Fade-in menu effects -->
         #toc-container {
             background-color: #E2EEF4;
             transition: background-color 2s;
@@ -41,9 +42,9 @@
 <body>
     <header>
         <div id="logo">
-            <h1><a href="../"><span>Vincent</span> La</a></h1>
+            <h1><a href="/"><span>Vincent</span> La</a></h1>
             <nav style="text-align: right;">
-            {% for key, values in menu.items %}<a href="/../{{ values.url }}">{{ key }}</a>{% endfor %}
+            {% for key, values in menu.items %}<a href="{{ values.url }}">{{ key }}</a>{% endfor %}
             </nav>
         </div>
     </header>
@@ -57,7 +58,7 @@
     <div id="content_wrap">
         <div id="page_title">
             <span class="breadcrumbs">
-                <a href="../python">Python Tutorials</a> &#187;
+                <a href="/python">Python Tutorials</a> &#187; <a href="/python/{{ section_url }}">{{ section_name }}</a> &#187; 
             </span>
             <h1>{{ title }}</h1>
             </div>
@@ -69,11 +70,11 @@
                 <div id="next-tut">
                     <p style="text-align: center">
                         {% if prev %}
-                        <a href="../{{ prev.url }}" id="prev-tut-link"><strong>&#171; </strong>{{ prev }}</a>
+                        <a href="../../{{ prev.url }}" id="prev-tut-link"><strong>&#171; </strong>{{ prev }}</a>
                         {% endif %}
-                        <a href="/python">Index</a>
+                        <a href="../../">Index</a>
                         {% if next %}
-                        <a href="../{{ next.url }}" id="next-tut-link">{{ next }}<strong> &#187;</strong></a>
+                        <a href="../../{{ next.url }}" id="next-tut-link">{{ next }}<strong> &#187;</strong></a>
                         {% endif %}
                     </p>
                 </div>
@@ -83,11 +84,13 @@
                     <ul>
                         <li><a href="/python">Back to List of Python Tutorials</a></li>
                     </ul>
+
+                    {% block submenu %}
+                    {% endblock %}
+                    
                     <h2>Related Tutorials</h2>
                     {{ related_tutorials }}
                     
-                    {% block submenu %}
-                    {% endblock %}
                     <div id="toc-container">
                         <h2 id="toc"></h2>
                     </div>

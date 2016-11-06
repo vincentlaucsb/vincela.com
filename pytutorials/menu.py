@@ -39,16 +39,17 @@ def create_menu(dir):
 # Output: A usable HTML list
 def html_list(menu):
     html = ""
-    style = ""
-    html_cls = "page"
+    
     for key, values in menu.items():
+        style = ""
+        html_cls = "page"
+        
         if ('Quiz' in key):
             style += 'font-weight: 900'
         if (menu[key]['nested']):
             html_cls += " nested"
         
-        html += '<h3 class="{0}" style="{1}"><a href="{2}">{3}</a></h3>'.format(html_cls,style,values['url'],key)
-        html += '<p>{0}</p>'.format(values['description'])
+        html += '<h3 class="{0}" style="{1}"><a href="/python/{2}">{3}</a></h3>'.format(html_cls,style,values['url'],key)
+        html += '<p class="description">{0}</p>'.format(values['description'])
     
     return format_html(html)
-    

@@ -27,13 +27,12 @@ SECRET_KEY = secret_key.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['107.170.208.132','vincela.com']
 
 
 # Application definition
 
 # So I can install other apps #
-import sys
 CURRENT_DIR = os.path.dirname(__file__)
 sys.path.append(CURRENT_DIR)
 sys.path.append(CURRENT_DIR + '\\templatetags')
@@ -67,7 +66,9 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates','pages','pytutorials'],
+        'DIRS': [os.path.join(BASE_DIR,'templates'),
+                 os.path.join(BASE_DIR,'pages'),
+                 os.path.join(BASE_DIR,'pytutorials')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,4 +139,5 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "pytutorials/static")
 ]

@@ -1,0 +1,143 @@
+body {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    max-width: 45em;
+    line-height: 1.5;
+    margin: 2em auto 10% auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    color: #333333;
+    background-color: rgba(0,0,0,.02);
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, #contact, #more-contact {
+    font-family: Montserrat, sans-serif;
+}
+
+#name * {
+    text-decoration: none;
+}
+
+h2 { text-transform: uppercase; }
+
+h3 > span:not(.subtitle) {
+    font-weight: normal;
+    float: right;
+}
+
+h3 em {
+    font-size: 90%;
+}
+
+h4 { margin-bottom: 0; }
+
+/* Header: Name and Contact Info */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+header > * {
+    margin: 0;
+}
+
+#contact {
+    text-align: right;
+}
+
+#contact * {
+    margin: 0.2em;
+}
+
+#name {
+    text-transform: uppercase;
+    /* This is what makes my name stay at the top */
+    align-self: center;
+}
+
+#more-contact {
+    margin-bottom: 4em;
+}
+
+/* End Header */
+
+/* Resume Body */
+section + section {
+    margin-top: 3em;
+}
+
+.subtitle {
+    font-style: italic;
+    margin-top: -1em;
+}
+/* End of Resume Body */
+
+/* Skills Section */
+#skills-box {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
+
+#skills-box > section {
+    /*min-width: 20em;*/
+    width: calc(50% - 1em); /* 100% divided by number of columns minus padding */
+    padding-right: 1em;
+}
+
+#skills-box > section, #skills-box h3 {
+    margin: 0;
+}
+
+#skills-box li > ul {
+    padding: 0.1em 0 0.1em 1em;
+}
+/* End of skills */
+
+/* General List Styling */
+ul {
+    list-style: square outside none;
+    padding-left: 1em;
+    
+}
+
+li > ul li { 
+    list-style: disc outside none;
+}
+/* End of list styling */
+
+/* Responsive CSS Settings */
+@media screen {
+    #name { font-size: 3em; }
+}
+@media screen and (max-width: 700px) {
+    h3 > span:not(.subtitle) {
+        float: none;
+        display: block;
+    }
+    #skills-box > section { width: 100%; }
+    #contact { text-align: left; }
+}
+
+@media print {
+    body { 
+        font-size: 11pt;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+}

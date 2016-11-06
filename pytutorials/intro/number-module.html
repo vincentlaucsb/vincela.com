@@ -1,0 +1,88 @@
+{% extends "base_tutorial.html" %}
+
+{% block title %}Number Operations/Importing Modules{% endblock %}
+{% block description %}Now that we've covered the things we can do to strings, it's time to do the same for numbers.{% endblock %}
+{% block content %}
+<p>Here, we'll cover some operations we can perform on numbers. Most of them will be mathematical.</p>
+<h2>Basic Math Operations</h2>
+
+
+<h2>Importing Modules</h2>
+<p>In addition to some basic built-in functions, Python also includes dozens of built-in modules. A module is simply 
+a collection of functions and objects (which you will learn about later). Most modules are created for a specific purpose,
+e.g. statistical analysis, or web development, so their functions will be oriented around that purpose as well. Because these modules 
+can literally include hundreds of different functions, they are not automatically loaded. To load these modules, we can 
+use the <code>import</code> statement.</p>
+
+<h3>Namespaces</h3>
+<p>But before importing a module, we'll go over a hasty and brief explanation of what namespaces are and why they exist.
+Most of us have encountered real life situations where we have multiple people that share the same name working in the 
+same space. As a result, we have to invent a new way to referring to these people, e.g. "Nick 1" and "Nick 2", or "Nicholas", "Nick", and "Nikki."</p>
+<p>Likewise, multiple Python modules can share similar function names. We could imagine multiple Python math and statistics modules all 
+containing an <code>add()</code> function which performs completely different things depending on the module. <strong>Namespaces are 
+Python's solution to the problem of similar names.</strong></p>
+
+<h3>Importing the Math Module</h3>
+<pre><code>import math</code></pre>
+<p>This statement imports all of the functions of the module named <code>math</code> into the namespace also called <code>math</code>.
+To use the functions inside of the <code>math</code> namespace, we use the following syntax:
+</p>
+<pre><code>math.function_name</code></pre>
+<h4>Listing the functions in the namespace</h4>
+<p>By using the <code>dir()</code> function, we can list all of the contents of the <code>math</code> namespace.</p>
+<samp>['__doc__', '__loader__', '__name__', '__package__', '__spec__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign', 'cos', 'cosh', 'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'trunc']
+</samp>
+<p>While it is obvious what many of these functions do just by looking at their names (which is a good programming practice),
+we can find more detailed documentation here from <a href="https://docs.python.org/3/library/math.html">the official Python documentation.</a></p>
+
+<p>Do not worry too much about the functions surrounded in __underscores__. These functions are intended by use for Python, and not the user (although 
+in more advanced later lessons, we might tamper with some of these __functions__).</p>
+
+<h3>Some Examples</h3>
+<h4>Basic Math</h4>
+<pre><samp>>>> math.sqrt(4)
+2.0</samp></pre>
+<h4>Mathematical Constants</h4>
+<pre><samp>>>> math.e
+2.718281828459045
+>>> math.pi
+3.141592653589793
+</samp></pre>
+<h4>Trigonometric Functions</h4>
+<pre><samp>>>> math.radians(180)
+3.141592653589793
+>>> math.sin(0)
+0.0
+>>> math.cos(0)
+1.0
+>>> math.cos(math.pi)
+-1.0
+>>> math.cos(-math.pi)
+-1.0
+>>> math.cos(2*math.pi)
+1.0</samp></pre>
+
+<h4>Logarithms</h4>
+<p>Here, the second (optional) argument is the base of the logarithm. If the base is not specified, Python 
+returns the natural logarithm (log with base e).</p>
+<pre><samp>>>> math.log(16,2)
+4.0
+>>> math.log(100,10)
+2.0
+</samp></pre>
+<h3>Importing Specific Functions</h3>
+<p>We can also import specific functions from the math module by typing:</p>
+<pre><code>from math import function_name</code></pre>
+
+<p>However, unlike with <code>import math</code>, here our functions get imported into the global namespace, i.e.
+the namespace that contains our familar <code>print()</code> function and all the variables we have been working with (so far).
+To call something in the global namespace, we do not need to prefix it with anything&mdash;we just call it by its name. Now,
+the obvious danger in this is that we may accidentally import two functions with the same name from different modules into the global namespace.</p>
+
+<h4>Importing an entire module into the global namespace</h4>
+<p>Lastly, you may occasionally see a <strong>wildcard import</strong>, where an entire module gets imported into the global namespace.</p>
+<pre><code>from math import *</code></pre>
+<p>However, for the name conflict issue mentioned earlier, this is generally not recommended.</p>
+
+<h2>Complex Math Operations</h2>
+{% endblock %}

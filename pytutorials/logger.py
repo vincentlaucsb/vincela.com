@@ -15,6 +15,9 @@ BASE_DIR = os.path.dirname(__file__).replace(PARENT_MODULE_NAME,'')
 from pytutorials.logger import TUTORIALS_LOG
 
 TUTORIALS_LOG.info('Blah blah blah')
+
+To log with the executing script name, use:
+TUTORIALS_LOG.info('[{0}] Blah blah blah'.format(__name__))
 '''
 TUTORIALS_LOG = logging.getLogger(__name__)
 TUTORIALS_LOG.setLevel('DEBUG')

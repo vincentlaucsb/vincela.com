@@ -1,10 +1,9 @@
 CONTENTS = [
-    'lists.html',
-    'list-tuple-dict-quiz.html',
     'booleans.html',
+    ['battery.html','if-else-examples.html'],
+    'loop.html',
+    ['loop-practice.html','mph-kmh-converter.html'],
     'functions.html',
-    'funct-quiz.html',
-    'weather.html',
-    'mph-kmh-converter.html',
-    'modules-packages-quiz.html'
+    ['funct-quiz.html','weather.html'],
+    'variable-scope.html'
 ]

@@ -1,0 +1,130 @@
+{% extends "base_tutorial.html" %}
+{% load static %}
+
+{% block description %}This article will explain what Boolean statements are and how they work in Python, as well as practical applications.{% endblock %}
+{% block keywords %}boolean, python{% endblock %}
+{% block title %}Practice Problem: Battery Level Messages{% endblock %}
+{% block content %}
+<h2>Practice Problem</h2>
+<p>That's enough talk about if/else loops for now. Perhaps we should try out a real practice problem:</p>
+<a href="{% static 'ifelse/battery.py' %}"><h3 class="file-download">battery.py</h3></a>
+<pre><code>from time import sleep
+
+battery_level = 100
+
+while battery_level > 0:
+    sleep(1)
+    battery_level -= 10
+    print("The battery is currently at {0} percent.".format(battery_level))</code></pre>
+<p>At this point, you are not expected to really know exactly how
+the script above works, aside from the <code>print</code> statement. 
+(You will understand how the <code>while</code> statement works in the next lesson.) 
+Just understand that we have a 
+script that mimicks a device with a battery life of only 10 seconds. (Of course,
+for realism we can easily change that to 10 hours if you wish.)
+However, that should not prevent you from completing the following task.</p>
+    
+<p>Currently, the script has this output.</p>
+<pre><samp>The battery is currently at 90 percent.
+The battery is currently at 80 percent.
+The battery is currently at 70 percent.
+The battery is currently at 60 percent.
+The battery is currently at 50 percent.
+The battery is currently at 40 percent.
+The battery is currently at 30 percent.
+The battery is currently at 20 percent.
+The battery is currently at 10 percent.
+The battery is currently at 0 percent.</samp></pre>
+
+<h4>Goal</h4>
+<p>However, we want to modify it so it displays warning messages when the battery is low as well as a shutoff message.</p>
+<pre><samp>The battery is currently at 90 percent.
+The battery is currently at 80 percent.
+The battery is currently at 70 percent.
+The battery is currently at 60 percent.
+The battery is currently at 50 percent.
+The battery is currently at 40 percent.
+The battery is currently at 30 percent.
+The battery is currently at 20 percent. Consider connecting a charger.
+The battery is currently at 10 percent. Consider connecting a charger.
+The battery is currently at 0 percent. Goodbye.
+</samp></pre>
+<p><strong>You will want to indent your if/else blocks an extra level so Python recognizes them as being part of the while loop.</strong>
+Again, we'll explain exactly how while loops work in the next lesson. All that is required here is knowledge of if/elif/else statements.
+Your final code should look something like this:</p>
+<pre><code>from time import sleep
+
+battery_level = 100
+
+while battery_level > 0:
+    sleep(1)
+    battery_level -= 10
+    
+    if ...:
+        print("Some message")
+    elif ...:
+        print("A different message")
+    else:
+        print("Another different message")
+    </code></pre>
+<p>Note: This example was used solely to demonstrate proper indentation. As for the if/elif/else branches, it's actually
+possible to succesfully complete this problem with only if statements.</p>
+
+<h2>Some Solutions to the Practice Problem</h2>
+<h3>Solution 1: If, Else-If, Else</h3>
+<p>This is probably the cleanest and easiest to understand of the solutions.</p>
+<a href="{% static 'ifelse/battery_solution.py' %}"><h4 class="file-download">battery_solution.py</h4></a>
+<pre><code>from time import sleep
+
+battery_level = 100
+
+while battery_level > 0:
+    sleep(1)
+    battery_level -= 10
+    
+    if battery_level > 20:
+        print("The battery is currently at {0} percent.".format(battery_level))
+    elif battery_level > 0:
+        print("The battery is currently at {0} percent. Consider connecting a charger.".format(battery_level))
+    else:
+        print("The battery is currently at {0} percent. Goodbye.".format(battery_level))
+    </code></pre>
+<h3>Solution 2: If, If, If</h3>
+<p>All of the solutions presented are logically equivalent, hence why they all do the same thing. However, some solutions 
+are easier to understand than others. Programming is already as hard as it is, so there's no need to come up with overly complicated 
+or "clever" solutions. The solution below is merely presented to prove the point that this problem can be solved with only if statements.</p>
+<pre><code>from time import sleep
+
+battery_level = 100
+
+while battery_level > 0:
+    sleep(1)
+    battery_level -= 10
+    
+    if battery_level > 20:
+        print("The battery is currently at {0} percent.".format(battery_level))
+    if 0 < battery_level <= 20:
+        print("The battery is currently at {0} percent. Consider connecting a charger.".format(battery_level))
+    if battery_level == 0:
+        print("The battery is currently at {0} percent. Goodbye.".format(battery_level))</code></pre>
+<h3>Solution 3: Nested If/Else Blocks</h3>
+<p>This solution nests an if/else branch inside another else branch. The concept of nesting if/else branches is 
+a very straightforward extension of how regular if/else branches work. The nested branches are only considered 
+if the if/elif/else branch which contains them gets "activated."</p>
+<pre><code>from time import sleep
+
+battery_level = 100
+
+while battery_level > 0:
+    sleep(1)
+    battery_level -= 10
+    
+    if battery_level > 20:
+        print("The battery is currently at {0} percent.".format(battery_level))
+    else: # This only gets activated if it is false that battery_level > 20, i.e. battery_level <= 20
+        if battery_level > 0:
+            print("The battery is currently at {0} percent. Consider connecting a charger.".format(battery_level))
+        else:
+            print("The battery is currently at {0} percent. Goodbye.".format(battery_level))</code></pre>
+<p>Notice how similar this solution is to the first solution. Can you perhaps guess why "else if" statements are called that?</p>
+{% endblock %}
