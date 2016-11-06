@@ -1,28 +1,9 @@
-{% load static %}
-
-<html>
-<head>
-<title>Vincent La's Resume</title>
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
-<link href="{% static "index_css/index_portrait.css" %}" media="(orientation: portrait)" rel="stylesheet" type="text/css">
-<link href="{% static "resume_css/resume.css" %}" rel="stylesheet" type="text/css">
-</head>
-<body>
-<header>
-    <h1 id="name"><a href="../">Vincent <!-- Looks terrible don't do it: <span style="font-weight: normal">-->La<!--</span>--></a></h1>
-    <div id="contact">
-        <p>820 Camino Corto Apt 7<br />
-        Isla Vista, CA 93117<br />
-        (510) 759-4305<br />
-        <a href="mailto:vincela9@gmail.com">vincela9@gmail.com</a></p>
-    </div>
-</header>
-<p id="more-contact"><a href="https://www.linkedin.com/in/vincent-la-sb">www.linkedin.com/in/vincent-la-sb</a></p>
+{% extends "resume.html" %}
 
 {% block content %}
 <section>
     <h2>Summary</h2>
-    <p>I am a skilled and motivated student with a diverse intellectual background looking for employment in a team setting.</p>
+    <p>I am a skilled and motivated student with a diverse intellectual background looking to apply my knowledge.</p>
 </section>
 <section>
     <h2>Education</h2>
@@ -48,7 +29,7 @@
                     <li>Self-driven, while still being able to communicate my goals and mehods to others</li>
                     </ul>
                 </li>
-                </ul>
+            </ul>
             <ul>
                 <li>Organized and detail-oriented</li>
                 <li>Can write clearly, concisely, and with intent</li>
@@ -79,10 +60,4 @@
     <h3>Blah</h3>
     <p>Blah</p>
 </section>-->
-<section>
-    <h2>Work Experience</h2>
-    <h3>East Bay Asian Youth Center <span>2013</span></h3>
-</section>
 {% endblock %}
-</body>
-</html>

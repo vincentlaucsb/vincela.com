@@ -1,4 +1,5 @@
 {% extends "base_tutorial.html" %}
+{% load static %}
 
 {% block description %}This article will explain what Boolean statements are and how they work in Python, as well as practical applications.{% endblock %}
 {% block keywords %}boolean, python{% endblock %}
@@ -14,13 +15,65 @@ Boolean statements are named after George Boole, who thought of the idea of repr
 false statements as 0s, and true statements as 1s. This simple idea is now what underpins
 all of modern computing.</p>
 
+<h3>Evaluating Boolean Statements Directly</h3>
+<p>In Python, we can directly check the truth-value of a Boolean statement by using the function
+<strong><code>bool()</code></strong>. When creating Boolean statements, we can use operators such as:</p>
+<table>
+    <tr>
+        <th>Operator</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>x <strong>=</strong> y</td>
+        <td><strong>True</strong> if x is equal to y. <strong>False</strong> otherwise.</td>
+    </tr>
+    <tr>
+        <td>x <strong>!=</strong> y</td>
+        <td><strong>True</strong> if x is not equal to y. <strong>False</strong> otherwise.</td>
+    </tr>
+    <tr>
+        <td>x <strong>></strong> y</td>
+        <td><strong>True</strong> if x is greater than y. <strong>False</strong> otherwise.</td>
+    </tr>
+    <tr>
+        <td>x <strong>>=</strong> y</td>
+        <td><strong>True</strong> if x is greater than or equal to y. <strong>False</strong> otherwise.</td>
+    </tr>
+    <tr>
+        <td>x <strong><</strong> y</td>
+        <td><strong>True</strong> if x is less than y. <strong>False</strong> otherwise.</td>
+    </tr>
+    <tr>
+        <td>x <strong><=</strong> y</td>
+        <td><strong>True</strong> if x is less than or equal to y. <strong>False</strong> otherwise.</td>
+    </tr>
+</table>
+<p>These are similar to the operators you've dealt with in every math class since algebra, so we will skimp a little on their explanation.</p> 
+<h4>Example</h4>
+<pre><samp>>>> x = 5
+>>> bool(x > 10)
+False</samp></pre>
+
+<h4>Example 2: Checking if x is between two numbers</h4>
+<p>Here, we are basically asking Python "Is x greater than 0 and less than 10?"
+<pre><samp>>>> x = 5
+>>> bool(0 < x < 10)
+True
+>>> x = 20
+>>> bool(0 < x < 10)
+False</samp></pre>
+<p>This is exactly the same as math inequality notation. This is important to note 
+because not every programming language supports this type of syntax.</p>
 <h3>Why do we use them?</h3>
-<p>As you may have seen earlier, a lot of times when writing functions, we want to 
+<p>Rarely will we actually use the <code>bool()</code> function to directly find a 
+statement's truth-value. However, almost all interesting programming will involve 
+<em>implicitly</em> determing truth-values. That is, often when programming we want to 
 do one thing if a certain condition is true, but another thing is it is false.</p>
 <p>We evaluate "Boolean statements" in our everyday lives as well. For example,
 before walking out the door, you might evaluate something like,
 "If it there are zombies outside, I will grab my gun. Otherwise, I'll leave it home."
-This statement can be translated into Python-like pseudocode (fake code) like this:
+This statement can be translated into Python-like pseudocode (fake non-functioning code which demonstrates 
+a concept) like this:
 </p>
 <pre><code>proposition = "There are zombies"
 if proposition is True:
@@ -41,41 +94,182 @@ Anytime you want to refer to Boolean values, you should always use True or False
 Likewise, you should never use True or False as variable, function, etc. names.</p>
 
 <h2>Branching Out with Control Flow</h2>
+<h3>Another Analogy</h3>
 <p>If, else-if, and else statements allow us to create more complex and useful functions and 
-programs in Python. Rather than giving an explicit definition, an example is probably most instructive.
+programs in Python. When Python reads a script, it executes statements from top to bottom. Metaphorically speaking,
+we can say that a script <em>flows</em> a certain way (top to bottom). Likewise, we can think of a large group of people flowing 
+into a facility that has a swimming pool. Furthermore, we can imagine it would be reasonable to divert this flow in certain ways.
+If a person is very young or otherwise lacks swimming ability, then we tell them to go to the shallow end of the pool. Otherwise, 
+they have the option to go to the deep end.</p>
+<p>In this example, we are evaluating a condition: a person's swimming ability. Based on our evaluation, we may choose one option or 
+another. In Python, if, else, and else if statements allow us to make different choices based on conditionals as well.</p>
 
+<h3>Basic Syntax</h3>
+<p>The basic syntax for Python if, else-if, and else statements looks like this:</p>
+<pre><code class="Python">if condition_1:
+    # code that executes if condition_1 is True goes here
+elif condition_2:
+    # code that executes if condition_2 is True goes here
+else:
+    # code that executes if condition_3 is True goes here</code></pre>
 
-Add more later...</p>
+<h3>Example: A Simple If/Else Branch</h3>
+<p>This script demonstrates a simple if/else branch. The condition being evaluated here is if x is a positive number or not. 
+Based on the results of that conditional, we either state that it is a positive or a non-positive number. (Note: Zero is neither a positive nor a 
+negative number).</p>
+<pre><code>x = 5
 
-<h2>A Cool Trick with Boolean Statements</h2>
-<p>In Python, empty strings, lists, dicts, and other container objects evaluate to <strong>False</strong>.</p>
-<pre><code>>>> bool("Just gonna stand there and watch me burn")
-True
->>> bool([1,2,3,4,5])
-True
->>> bool({"staples":500,"pens":10,"notebooks":5,"post-its":200})
-True
->>> bool("")
-False
->>> bool([])
-False
->>> bool({})
-False
+if x > 0:
+    print("x is a positive number.")
+else:
+    print("x is a non-positive number.")
 </code></pre>
+<h3>Example: A Simple If/Else If/Else Branch</h3>
+<p>By extending the previous example, we can a little extra complexity to our flow of control by adding an <code>elif</code> (else if) statement.</p>
+<pre><code>x = 5
 
-<h3>Why does this matter?</h3>
-<p>There are many times when we're coding where we will need to check if, for example,
-a list is empty or not. In Python, we have a neater, shorter way
-to check if something contains items or not.</p>
+if x > 0:
+    print("x is a positive number.")
+elif x == 0:
+    print("x is zero.")
+else:
+    print("x is a negative number.")</code></pre>
+<p><strong>Else-if branches only execute if the preceding if (and else-if) branches are false.</strong> For example, if you run the code below, you'll
+notice that the message "x is 1" <em>does not</em> get outputted.</p>
+<pre><code>x = 1
 
-<h4>Example</h4>
-<p>Instead of:</p>
-<pre><code>if len(my_list) not 0</code></pre>
+if x > 0:
+    print("x is a positive number.")
+elif x == 1:
+    print("x is 1.")
+elif x == 0:
+    print("x is 0.")
+else:
+    print("x is a negative number.")</code></pre>
+<h4>Output</h4>
+<pre><samp>x is a positive number.</samp></pre>
+<p>If you want "x is 1." to be ouputted in addition to "x is a positive number.", then you'll want to change the <code>elif x == 1</code> statement
+to a <code>if x == 1</code> statement.
+<h4>English Translation</h4>
+<p>Some may find it very helpful to translate the above Python if/elif/else statements into natural English sentences:</p>
+<ul>
+<li>If x is greater than 0, then print out "x is a positive number."</li>
+<li>Otherwise, we have three remaining options.</li>
+<ul><li>If x is equal to 1, print out "x is 1."</li>
+<li>If the previous is not true, and x is equal to 0, print out "x is 0."</lI>
+</ul>
+<li>If none of the previous are true, print out "x is a negative number."</li>
+</ul>
+<h3>Some Rules About If/Else Branches</h3>
+<p>Most of these rules are intuitive, but it's helpful to go over them.</p>
+<ul><li>If statements can stand on their own (i.e. we can use if statements without using else statements as well)</li>
+<ul>
+<li>We make "if statements" often in real life without accompanying "else statements", e.g. "If I come back from work by 5, we'll go to the grocery store."</li>
+<li>The above statement has an implied else statement. "If I'm still working at 5, we're not going to the grocery store." But just like in real life and in 
+Python, explicit else statements are not always necessary to achieve your goal.</li>
+</ul>
+<li>Else statements require accompanying if statements.</li>
+<ul><li>"Give me a refund or else I'll sue!" makes sense. On the other hand, "Or else I'll sue!" is gibberish.</li></ul>
+</ul>
 
-<p>Simply use:</p>
-<pre><code>if len(my_list)</code></pre>
+<h2>More Syntax</h2>
+<h3>Parentheses and Logical Operators</h3>
+<p>While it is not necessary, we can surround our conditions with parentheses.</p>
+<pre><code class="Python">if (condition_1):
+    # code that executes if condition_1 is True goes here
+elif (condition_2):
+    # code that executes if condition_2 is True goes here
+else:
+    # code that executes if condition_3 is True goes here</code></pre>
+    
+<h4>Logical Operators</h4>
+<p>Parentheses become very useful we want to combine conditions together in some way by making the 
+final condition easier to read. Python provides logical operators for combining statements:</p>
 
+<table>
+    <tr>
+        <th>Operator</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>p <strong>and</strong> q</td>
+        <td>
+            <ul>
+                <li><strong>True</strong> if both p and q are True.</li>
+                <li><strong>False</strong> if either p or q are False.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>p <strong>or</strong> q</td>
+        <td>
+            <ul>
+                <li><strong>True</strong> if either p or q is True.</li>
+                <li><strong>False</strong> if both are False.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>not</strong> p</td>
+        <td>Returns the opposite truth-value of p.</td>
+        </tr>
+</table>
+
+<p>For anybody who has ever had a lesson on formal logic, e.g. in a philosophy, math, or computer science class,
+this table should not come as a surprise. For everybody else, here's your introduction to formal logic! If you are confused 
+about why the above statements have certain results, then Google "truth tables." (The logical operations above are called 
+"conjunction," "disjunction," and "negation" respectively.)</p>
+
+<h4>Examples</h4>
+<h5>Is x either an all-capital string or a numeric string?</h5>
+<pre><code>x = 5
+
+if (x.isnumeric() or x.isupper()):
+     print("x is either a number or an uppercase word.")</code></pre>
+<p>This will output <code>True</code>. For a list of more string methods, refer to the <a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">
+official Python documentation.</a></p>
+<h5>Is x a positive integer that is also 5 digits long?</h5>
+<pre><code>x = 50000
+
+if (type(x) == int) and (x > 0) and (len(str(x)) == 5):
+     print("x is a five digit integer.")</code></pre>
+<strong>Output</strong>
+<pre><samp>x is a five digit integer.</samp></pre>
+<p>Notice here that we converted x to a string since we can't use the length function <code>len()</code> directly on numbers.
+Moreover, <em>this example is for demonstration purposes only</em>. Be nice to yourself and other people who might have to code with you 
+and avoid creating unnecessarily complex conditional statements.</p>
+
+
+<h2>Combining If/Else Branches</h2>
+<p>Sometimes, it may be necessary to use a combination of if/else branches to solve a problem. In the below example, we want to print 
+a message stating which one of five groups a number belongs to:
+<ul><li>Even positive number</li>
+<li>Odd positive number</li>
+<li>Even (non-positive) number (i.e. zero)</li>
+<li>Odd negative number</li>
+<li>Even negative number</li>
+</ul>
+</p>
+<pre><code>x = 10
+
+if x > 0: sign = "positive "
+elif x == 0: sign = ""
+else: sign = "negative "
+    
+if x%2 == 0:
+    print("x is an even {0}number.".format(sign))
+else:
+    print("x is an odd {0}number.".format(sign))</code></pre>
+<h3>Output</h3>
+<pre><samp>x is an even positive number.</samp></pre>
+<p>It would be a good exercise to verify this script works for different values of x, and to <em>understand</em> why.</p>
+
+<h2>Conclusion</h2>
+<p>Hopefully, you should have a basic understanding of if, else-if, and else statements. We'll solidify this understanding with a 
+practice problem on the next page.</p>
 {% endblock %}
  
 {% block submenu %}
+<h2>Recommended Outside Reading</h2>
+<a href="https://docs.python.org/3/library/stdtypes.html#truth-value-testing">Python Documentation on Truth-Value Testing</a>
 {% endblock %}

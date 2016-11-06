@@ -40,25 +40,18 @@
 <body>
     <header>
         <div id="logo">
-            <h1><a href="../"><span>Vincent</span> La</a></h1>
+            <h1><a href="/"><span>Vincent</span> La</a></h1>
             <nav style="text-align: right;">
             {% for key, values in menu.items %}<a href="{{ values.url }}">{{ key }}</a>{% endfor %}
             </nav>
         </div>
     </header>
-    <!--
-    <div id="head">
-        <h1><a href="../"><span style="color: rgba(209,219,189,1)">Vincent</span> La</a></h1>
-        <nav>
-        {% for key, values in menu.items %}<a href="{{ values.url }}">{{ key }}</a>{% endfor %}
-        </nav>
-    </div>-->
     <div id="content_wrap">
         <div id="page_title">
             <!--<span class="breadcrumbs">
                 <a href="../python">Python Tutorials</a> &#187;
             </span>-->
-            <h1>Python Tutorials</h1>
+            {% block page_title %}<h1>Python Tutorials</h1>{% endblock %}
             </div>
         <div id="article_content">
             <div id="content">
@@ -75,13 +68,14 @@
                     <div id="toc-container">
                         <h2 id="toc"></h2>
                     </div>
+                    </div>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
     <footer>
         <p id="footer-menu"> 
-            {% for key, values in menu.items %}<a href="{{ values.url }}">{{ key }}</a>{% endfor %}
+            {% for key, values in menu.items %}<a href="../{{ values.url }}">{{ key }}</a>{% endfor %}
         </p>
         <h3>Find Me</h3>
         <p>

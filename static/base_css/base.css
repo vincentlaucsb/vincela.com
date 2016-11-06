@@ -68,30 +68,6 @@ button:hover, header nav > a:hover {
 }
 /** End of page title **/
 
-/* Code Boxes */
-pre {
-    overflow: auto;
-}
-
-samp, pre > code {
-    border-left: 0.25em solid;
-    line-height: 1.4;
-    display: block;
-}
-
-samp {
-    border-color: rgba(62,96,111,1);
-    background: #D8E4E9;
-    padding: 1em;
-}
-
-pre > code {
-    background-color: #dddddd;
-    border-color: rgba(62,96,111,1);
-    padding: 0.5em;
-}
-/* End of Code Boxes */
-
 /** Sidebar **/
 #sidebar-wrapper {
     order: 2;
@@ -173,7 +149,8 @@ pre > code {
 }
 
 /* Next/Previous Tutorial Links */
-#prev-tut-link { float: left; }
-#next-tut-link { float: right; }
+#prev-tut-link, #next-tut-link { max-width: 15em; }
+#prev-tut-link { float: left; text-align: left; }
+#next-tut-link { float: right; text-align: right; }
 
 /** End of Content **/

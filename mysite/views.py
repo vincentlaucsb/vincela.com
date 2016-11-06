@@ -30,16 +30,3 @@ class FlatPage(TemplateView):
 	    # Modifying context passed to the template #
         context['menu'] = TOP_LEVEL_MENU
         return context
-
-class Python(View):
-    def get(self,request):
-        template = loader.get_template('python.html')
-        context = {
-            'menu': TOP_LEVEL_MENU,
-            'intro': html_list(INTRO_MENU),
-            'basicsmenu': html_list(BASICS_MENU),
-            'funcdatamenu': html_list(FUNC_MENU),
-            'classmenu': html_list(CLASS_MENU),
-            'appendix': html_list(APPENDIX_MENU)
-            }
-        return HttpResponse(template.render(context, request))

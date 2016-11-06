@@ -1,78 +1,50 @@
 {% extends "base_tutorial.html" %}
 
+{% load static %}
+
 {% block title %}Getting Your Feet Wet: Installing and Using Python for the First Time{% endblock %}
+{% block description %}This tutorial will get you up and running with Python, even if you don't have it installed yet!{% endblock %}
 {% block content %}
-<h2>What is a Boolean statement?</h2>
-<p>From Wikipedia:
-<blockquote>In computer science, a Boolean expression is an expression in a programming 
-language that produces a Boolean value when evaluated, i.e. one of true or 
-false.</blockquote>
-
-Boolean statements are named after George Boole, who thought of the idea of representing
-false statements as 0s, and true statements as 1s. This simple idea is now what underpins
-all of modern computing.</p>
-
-<h3>Why do we use them?</h3>
-<p>As you may have seen earlier, a lot of times when writing functions, we want to 
-do one thing if a certain condition is true, but another thing is it is false.</p>
-<p>We evaluate "Boolean statements" in our everyday lives as well. For example,
-before walking out the door, you might evaluate something like,
-"If it there are zombies outside, I will grab my gun. Otherwise, I'll leave it home."
-This statement can be translated into Python-like pseudocode (fake code) like this:
+<h2>Installing Python</h2>
+<p>Installing Python is very simple, as long as you have administrator privilleges on your computer.
 </p>
-<pre><code>proposition = "There are zombies"
-if proposition is True:
-    get_weapon("rifle")
-    get_weapon("flamethrower")
-else:
-    do_nothing()
-    live_normally()
-</code>
-</pre>
-<p>In the previous example, the Boolean statement was the proposition "there are zombies."
-This proposition has two values, <strong>True</strong> or <strong>False</strong>.
-The <strong>if</strong> branch of our program executes if the proposition is True. The <strong>else</strong> branch
-executes if it is False.</p>
-<p>Also notice the capitalization of <strong>True</strong> and <strong>False</strong>. This 
-is because Python has these keywords reserved to refer to the potential values of Boolean statements.
-Anytime you want to refer to Boolean values, you should always use True or False capitalized in that way.
-Likewise, you should never use True or False as variable, function, etc. names.</p>
 
-<h2>Branching Out with Control Flow</h2>
-<p>If, else-if, and else statements allow us to create more complex and useful functions and 
-programs in Python. Rather than giving an explicit definition, an example is probably most instructive.
+<h3>Downloading from www.python.org <em>(Windows, Mac, Linux)</em></h3>
+<p>Python can be downloaded from <a href="https://www.python.org/">https://www.python.org/</a>.
+You may need to scroll down to see it, but the download link is located directly on the main page.</p>
+<p>Now, there are currently two main versions of Python in circulation&mdash;Python 3 and Python 2.
+For the purposes of this tutorial, we will be using Python 3.</p>
 
+<h3>Download from the Terminal (Mac, Linux)</h3>
+<p>If you are unsure how to access the command line (terminal), a quick Google will
+give you your answer. Once you have opened your terminal, enter this command:</p>
+<pre><samp>sudo apt-get install python3</samp></pre>
+<p>Note: Using "sudo apt-get install python" will install Python 2, not 3.</p>
 
-Add more later...</p>
+<h2>Starting Python</h2>
+<p>Now that we've installed Python, it's time to use it.</p>
+<h3>Using Python from the Command Line</h3>
+<p>Note to self: finish this section later</p>
 
-<h2>A Cool Trick with Boolean Statements</h2>
-<p>In Python, empty strings, lists, dicts, and other container objects evaluate to <strong>False</strong>.</p>
-<pre><code>>>> bool("Just gonna stand there and watch me burn")
-True
->>> bool([1,2,3,4,5])
-True
->>> bool({"staples":500,"pens":10,"notebooks":5,"post-its":200})
-True
->>> bool("")
-False
->>> bool([])
-False
->>> bool({})
-False
-</code></pre>
+<h2>Testing the Waters</h2>
+<p>Now, we're going to use some actual Python! From the main Python console, we can
+type in and execute actual Python code. In the example below, we're telling Python to display a 
+basic "Hello World!" message.</p>
 
-<h3>Why does this matter?</h3>
-<p>There are many times when we're coding where we will need to check if, for example,
-a list is empty or not. In Python, we have a neater, shorter way
-to check if something contains items or not.</p>
+<p>Instructions:
+<ol><li>Type <code>print("Hello world")</code> into the window
+<li>Done.
+</ol>
 
-<h4>Example</h4>
-<p>Instead of:</p>
-<pre><code>if len(my_list) not 0</code></pre>
+<img src="{% static 'baby-steps/helloworld.png' %}"></img>
 
-<p>Simply use:</p>
-<pre><code>if len(my_list)</code></pre>
-
+<h3>What just happened?</h3>
+Here, we told Python to execute its <code>print()</code> function, which displays 
+whatever messages we tell it to display. The stuff next to the three arrows <code>>>></code>
+is our input, and the stuff that comes on the line after is the resulting output. In general,
+the outputs from the things we enter into a Python window are going to be the same as if we 
+were running them from a .py script. However, there is one exception, which will be explained shortly.
+</p>
 {% endblock %}
  
 {% block submenu %}

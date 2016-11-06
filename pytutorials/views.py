@@ -36,6 +36,21 @@ Tutorial lists:
 def tutorial_menu(dir):
     menu = Menu()
 
+    def add_tut(filename,nested=False):
+        filepath = BASE_DIR + "pytutorials/{0}/".format(dir) + filename
+        page_title = get_title(filepath)
+        menu[page_title] = {}
+        menu[page_title]["url"] = dir + "/" + filename[:-5]
+        
+        # Implement a way to read descriptions later
+        menu[page_title]["description"] = get_description(filepath)
+        
+        menu[page_title]["section"] = dir
+        menu[page_title]["template"] = dir + '/' + filename # Template location
+        
+        menu[page_title]["nested"] = nested
+        TUTORIALS_LOG.info('[{0}] Adding {1} to menu'.format(__name__,filename))
+
     ''' In every folder should be a contents.py file with a LIST variable
         named CONTENTS listing every file in the order they should be 
         listed '''
@@ -55,19 +70,11 @@ def tutorial_menu(dir):
         dir = dir.replace('.','/')
     
         try:
-            filepath = BASE_DIR + "pytutorials/{0}/".format(dir) + filename
-            page_title = get_title(filepath)
-            menu[page_title] = {}
-            menu[page_title]["url"] = dir + "/" + filename[:-5]
-            
-            # Implement a way to read descriptions later
-            menu[page_title]["description"] = get_description(filepath)
-            
-            menu[page_title]["section"] = dir
-            menu[page_title]["template"] = dir + '/' + filename # Template location
-            
-            menu[page_title]["nested"] = False
-            TUTORIALS_LOG.info('[{0}] Adding {1} to menu'.format(__name__,filename))
+            if type(filename) == str:
+                add_tut(filename)
+            elif type(filename) == list:
+                for i in filename:
+                    add_tut(i,nested=True)
         
         # Usually triggered by a bad entry in the contents.py file
         except FileNotFoundError:
@@ -88,14 +95,19 @@ def tutorial_response(func):
     def wrapper(self, request="", *args,**kwargs):
         # Ex: request.path
         # '/python/basics/list-tuple-dict-quiz'
-        url = self.request.path.split("/")[-2] + '/' + self.request.path.split("/")[-1]
-        quiz_name = self.request.path.split("/")[-1]
+        
+        # Example expected value of url: 'intro/foreword'
+        url = self.request.path.split("/")[-3] + '/' + self.request.path.split("/")[-2]
+        section_url = self.request.path.split("/")[-3]
+        quiz_name = self.request.path.split("/")[-2]
         
         context = {}
         context["menu"] = TOP_LEVEL_MENU
         
         current_page = TUTS_MENU.get_item(url=url)        
         context["title"] = current_page
+        context["section_url"] = section_url
+        context["section_name"] = SECTIONS[section_url]['name']
         template = loader.get_template(current_page.template)
         TUTORIALS_LOG.info("[{0}] Creating view for {1} with template {2}".format(__name__,current_page,current_page.template))
         
@@ -110,6 +122,7 @@ def tutorial_response(func):
         
         # Load the questions for this quiz #
         questions = QuizKey(quiz_name)
+        TUTORIALS_LOG.info("[{0}] Loading quiz questions for {1}".format(__name__,quiz_name))
         for qstn in questions:
             context[qstn] = questions[qstn]
 
@@ -124,6 +137,44 @@ class Tutorial(TemplateView):
         context = kwargs['context']
         return context
 
+SECTIONS = {
+    'intro': {'name':'Introduction: Learning to Walk','menu':html_list(INTRO_MENU)},
+    'basics': {'name':'Basic Building Blocks','menu':html_list(BASICS_MENU)},
+    'functions': {'name':'Functions','menu':html_list(FUNC_MENU)},
+    'classes': {'name':'Classes','menu':html_list(CLASS_MENU)},
+    'appendix': {'name':'Introduction: Learning to Walk','menu':html_list(APPENDIX_MENU)}
+}
+        
+class Python(View):
+    def get(self,request):
+        template = loader.get_template('python.html')
+        context = {
+            'menu': TOP_LEVEL_MENU,
+            'intro': html_list(INTRO_MENU),
+            'basicsmenu': html_list(BASICS_MENU),
+            'funcdatamenu': html_list(FUNC_MENU),
+            'classmenu': html_list(CLASS_MENU),
+            'appendix': html_list(APPENDIX_MENU)
+            }
+        return HttpResponse(template.render(context, request))
+        
+class SectionTOC(TemplateView):
+    def get(self,request):
+        # Example:
+        # URL: /python/intro/
+        # will produce
+        # section = intro
+        section = self.request.path.split("/")[-2]
+        
+        template = loader.get_template('section_toc.html')
+        context = {
+            'menu': TOP_LEVEL_MENU,
+            'title': SECTIONS[section]['name'],
+            'toc': SECTIONS[section]['menu']
+            }
+            
+        return HttpResponse(template.render(context, request))
+        
 ## Quizzes ##
 # Generic Quiz view
 class Quiz(View):
