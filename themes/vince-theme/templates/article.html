@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }}{%endblock%}
+{% block base_head %}
+<link href='/theme/css/one-column.css' rel='stylesheet'>
+{% endblock %}
+
+{% block page_title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+    {% import 'translations.html' as translations with context %}
+    {{ translations.translations_for(article) }}
+
+    {{ article.content }}
+    
+    <h2>Related Content</h2>
+    <ul>
+    <!-- Is this the best way to get all pages in a category from an article? -->
+    {% for category in categories %}
+        {% if category.0 == article.category %}
+            {% for article in category.1 %}
+            <li><a href="/{{ article.url }}">{{ article.title }}</a></li>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    </ul>
+    
+    {% if article.modified %}
+		<p>
+		Last updated: {{ article.locale_modified }}
+		</p>
+	{% endif %}
+{% endblock %}

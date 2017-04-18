@@ -1,3 +1,0 @@
-CONTENTS = [
-    'phone-book.html'
-]

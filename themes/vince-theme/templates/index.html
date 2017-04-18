@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Vincent La">
+    <meta name="google-site-verification" content="0qsjBnF6SEUQQOQv6GOKxr3l2oy-Y-3tT3ayXzreWlA" />
+    <title>Vincent La</title>
+    
+	<style type="text/css">body {
+    background:
+        linear-gradient(to bottom, rgba(41, 41, 41, 0.5) 0%, rgba(41, 41, 41, 0.5)),
+        linear-gradient(to bottom, rgba(41, 41, 41, 0.5) 0%, rgba(41, 41, 41, 0.5)),
+        url('theme/images/young_nigga.jpg');
+    background-size: 100vw auto;
+    
+    /* Add backdrop, then desaturate background pic a little */
+    background-blend-mode: normal, saturation;
+    }</style>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700' rel='stylesheet' type='text/css'>
+    
+	<link href="/theme/css/index-css/index.css" media="all" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript">
+        var last_known_scroll_position = 0;
+        var ticking = false;
+
+        function doSomething(scroll_pos) {
+          var aboutme = document.getElementById('about');
+          
+          // do something with the scroll position
+          var vh = window.innerHeight;
+          var current_style = aboutme.getAttribute("style");
+          // Made the "About Me" section fade-in as user keeps scrolling
+          if (scroll_pos > 0) {
+            aboutme.setAttribute("style",current_style + "; opacity: " + (scroll_pos/vh));
+          }
+          else {
+            aboutme.setAttribute("style",current_style + "; opacity: 1");
+          }
+        }
+
+        window.addEventListener('scroll', function(e) {
+          last_known_scroll_position = window.scrollY;
+          if (!ticking) {
+            window.requestAnimationFrame(function() {
+              doSomething(last_known_scroll_position);
+              ticking = false;
+            });
+          }
+          ticking = true;
+        });
+    </script>
+</head>
+<body>
+
+<!--<div id="overlay"></div>-->
+<div id="content">
+    <h1 id="name"><span class="condensed">Vincent</span><br /> La</h1>
+    <p>Hi, and welcome to my online home! Feel free to explore my work, or scroll down to <strong>read more</strong> about me.</p>
+    </p>
+    <nav>
+        <ul>
+            <li id="about-link"><a href="#about">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/resume">Resume</a></li>
+        </ul>
+    </nav>
+</div>
+    
+<section id="about">
+    <h1>About Me</h1>
+    <h2></h2>
+    <p>Hi! My name is Vincent La and I am currently a senior at the University of 
+    California, Santa Barbara. When I graduate, the major listed on my diploma 
+    will be "Economics/Mathematics" although I have enjoyed and continue to 
+    learn more about  a myriad of other subjects. After all, they don't teach 
+    you how to build websites in math class. I consider myself a lifelong learner, 
+    trying to glean as much as I can inside and outside of the classroom. For example,
+    after performing poorly in high school calculus, I learned in college that I actually 
+    an aptitude for math! <!--
+    In pursuit of knowledge and all things that are cool, I have ended up with.-->
+    </p>
+    <!--
+    <p>I also specialize in
+    <ul>
+        <li>Dank memes</li>
+        <li>Rare pepes</li>
+    </ul>
+    </p>
+    -->
+    <p>If you like what you see, you can contact me at vincela@gmail.com or visit one of my 
+    profiles below.
+    </p>
+    <p style="text-align: center">
+    <!--
+    <a href="https://www.linkedin.com/in/vincent-la-sb"><img style="width: 60px; margin-right: 1em;" src="social_media/linkedin-121px.png"></img></a>
+    <a href="https://github.com/vincentlaucsb"><img style="width: 60px;" src="social_media/github-120px.png"></img></p></a>
+    -->
+</section>
+    
+<section id="projects">
+    <h1>Selected Projects</h1>
+</section>
+</body>
+</html>

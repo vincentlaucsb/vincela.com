@@ -1,3 +1,0 @@
-CONTENTS = [
-    'vector-class.html'
-]

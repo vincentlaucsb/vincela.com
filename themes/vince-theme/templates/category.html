@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category.page.title }}{% endblock %}
+
+{% block more_head %}
+<link href='/theme/css/one-column.css' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block page_title %}{{ category.page.title }}{% endblock %}
+
+{% block content %}
+    {{ category.page.content }}
+
+    <h2>{{ category.page.title }} Contents</h2>
+    <ul>
+    {% for article in articles %}
+        <li><a href="/{{ article.url }}">{{ article.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

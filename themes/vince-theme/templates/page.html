@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{%endblock%}
+{% block base_head %}
+<link href='/theme/css/one-column.css' rel='stylesheet'>
+<style type='text/css'>
+<!-- Override default header behavior -->
+header.header-fixed {
+    position: static;
+}
+</style>
+{% endblock %}
+
+{% block page_title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+    {% import 'translations.html' as translations with context %}
+    {{ translations.translations_for(page) }}
+
+    {{ page.content }}
+
+    {% if page.category %}
+        <h2>Other Pages in {{ page.category }}</h2>\
+        <ul>
+            {% for item in categories %}
+                {{ item }}
+                {% if item.0 == page.category %}
+                    {% for page in item.1 %}
+                    <li>{{ page }}</li>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+	{% if page.modified %}
+		<p>
+		Last updated: {{ page.locale_modified }}
+		</p>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,45 @@
+@import 'colors';
+
+.big-button-base {
+    font-family: $sans-serif;
+    font-size: 12pt;
+    margin: auto 0.1em auto 0.1em;
+    
+    /* Goal: Achieve a centered look for the text
+       Top padding is less than bottom padding due to optical illusions */
+    padding: 0.35em 0.6em 0.4em 0.6em;
+    
+    /*  Goal: Increase clickable area (implement when I find out how rounding works)
+    border: 5px solid transparent;
+    background-clip: padding-box;
+    */
+    
+    border: 0;
+    border-radius: 0.2em;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.big-button {
+    background-color: darken($od-green, 10%);
+    color: $white;
+    
+    @extend .big-button-base;
+}
+.big-button:hover { background-color: darken($od-green, 30%); }
+
+.big-button-brown { 
+    background-color: lighten($dirt, 10%);
+    color: $white;
+    
+    @extend .big-button-base;
+}
+.big-button-brown:hover { background-color: $dirt; }
+
+button { @extend .big-button; }
+button:hover { @extend .big-button:hover; }
+
+/** Transitions **/
+button, .big-button, .big-button-brown {
+    transition: background-color 1s;
+}

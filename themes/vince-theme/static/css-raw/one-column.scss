@@ -1,0 +1,25 @@
+@import 'colors';
+
+$content-max-width: 100%;
+
+article {
+    font-size: $smaller-size;
+    max-width: $content-max-width;
+    padding-top: $skip;
+    margin-bottom: $big-skip;
+    
+    > *:first-child {
+        margin-top: 0;
+    }
+    
+    @extend .container;
+}
+
+/** Structure **/    
+@media (max-width: 49.99em) {
+    @include container-width(90%);
+}
+@media (min-width: 50em) {
+    @include container-width(80%);
+}
+/** End Structure **/

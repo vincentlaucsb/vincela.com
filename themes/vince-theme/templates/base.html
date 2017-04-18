@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+        {% block head %}
+        <title>{% block title %}{% endblock title %} - {{ SITENAME }}</title>
+        <meta charset="utf-8" />
+        {% if FEED_ALL_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+        {% endif %}
+        {% if FEED_ALL_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+        {% endif %}
+        {% if FEED_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+        {% endif %}
+        {% if FEED_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        {% endif %}
+        {% if CATEGORY_FEED_ATOM and category %}
+        <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
+        {% endif %}
+        {% if CATEGORY_FEED_RSS and category %}
+        <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
+        {% endif %}
+        {% if TAG_FEED_ATOM and tag %}
+        <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
+        {% endif %}
+        {% if TAG_FEED_RSS and tag %}
+        <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
+        {% endif %}
+        {% endblock head %}
+        
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700' rel='stylesheet' type='text/css'>
+    
+    <!-- Default CSS -->
+    <link href='/theme/css/shared.css' rel='stylesheet' type='text/css'>
+    
+    <!-- Header -->
+    <script src="/theme/js/header.js"></script>
+    <link href="/theme/js/header.css" rel="stylesheet" type="text/css">
+    
+    <!-- Remove this block later -->
+    {% block base_head %}{% endblock %}
+    
+    {% block more_head %}{% endblock %}
+</head>
+
+<body>
+    <header id="navbar-top" class="header-fixed">
+        <h1><a href="/"><span id="vincent">Vincent</span> La</a></h1>
+        <nav>
+            {% for link in MAIN_MENU %}
+                <a href="{{ link[1] }}">{{ link[0] }}</a>
+            {% endfor %}
+        </nav>
+    </header>
+
+    <!-- title_class options are "title-big" and "title-regular" -->
+    <div id="title" class="{% block title_class %}title-regular{% endblock %}">
+        {% block breadcrumbs %}{% endblock %}
+        <h1>{% block page_title %}{% endblock %}</h1>
+    </div>
+    
+    <!-- Main content goes here -->
+    <article>
+        {% block content %}{% endblock %}
+    </article>
+    
+    <footer>
+        <nav>
+            {% for link in MAIN_MENU %}
+                <a href="{{ link[1] }}">{{ link[0] }}</a>
+            {% endfor %}
+        </nav>
+        
+        <h3>Find Me</h3>
+        <p>
+            <!--
+            <a href="https://github.com/vincentlaucsb"><img src="github.png" alt="Vincent La's GitHub"></a>
+            <a href="https://www.linkedin.com/in/vincent-la-0766b6117"><img src="linkedin.png"  alt="Vincent La's LinkedIn"></a>
+            -->
+        </p>
+        <p>&copy; 2016-2017 Vincent La</p>
+    </footer>
+</body>
+</html>

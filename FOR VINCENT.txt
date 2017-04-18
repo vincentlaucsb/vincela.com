@@ -1,4 +1,0 @@
-When pushing to GitHub, copy everything from vincela.com except for the files at the root of the base directory, e.g.:
-* secret keys
-* databases
-* etc...
