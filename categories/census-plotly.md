@@ -1,9 +1,9 @@
 Title: Census 2010 Data Visualization Project
 Date: 2017-04-09
 Modified: 2017-04-09 1758
-Tags: census2010, census, data, plotly
+Tags: census, data, plotly
 Authors: Vincent La
-Slug: census2010
+Slug: census-plotly
 Summary: Overview of Census 2010 Data Visualization Project
 
 ## US Population Distribution

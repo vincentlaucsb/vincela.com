@@ -5,7 +5,7 @@
 
 /* Used by all every page on my website */
 body {
-    background-color: darken($light-gray, 2.5%);
+    background-color: $light-gray;
     
     /* Font Settings */
     font-family: $serif;
@@ -18,7 +18,7 @@ body {
 body, body * { margin: 0; }
 
 a {
-    color: darken($teal, 5%);
+    color: saturate(lighten($dirt, 40%), 10%);
     text-decoration: none;
 }
 
@@ -207,27 +207,28 @@ pre {
     width: 100%;
     max-height: 50vh;
     display: block;
+    margin-top: $skip;
+    margin-bottom: $skip;
+    
+    /** Make code boxes look prettier **/
+    border-radius: 0.2em;
+    color: white;
+    padding: $small-skip;
+    white-space: pre;
+    line-height: 1.5;
+    display: block;
+    background-color: darken($od-green, 34%);
+    background-image: linear-gradient(darken($od-green, 35%) 50%,
+                      transparent 0);
+    background-origin: content-box;
+    background-size: auto 3em;
 
-    /* code.hljs to override highlight.js styles */
+    /* Slight override of highlight.js styles */
     code, code.hljs, samp {
-        white-space: pre;
-    
-        line-height: 1.5;
-        background: darken($light-gray, 5%);
-        display: block;
-        background-image: linear-gradient(darken($light-gray, 6%) 50%,
-                          transparent 0);
-        background-origin: content-box;
-        background-size: auto 3em;
-        padding: $small-skip;
+        margin: 0;
+        padding: 0;
+        background: rgba(0, 0, 0, 0);
     }
-    
-    code {
-        border-left: $small-skip/2 solid darken($od-green, 10%);
-    }
-    
-    samp {
-        border-left: $small-skip/2 solid darken($teal, 10%);
-    }
+
 }
 /** End of Code Blocks **/

@@ -7,12 +7,13 @@ Slug: index
 
 <div id="projects" class="grid-container-nx3">
     <section>
-        <h2><a href="/census2010/">US Census 2010 Data Mapping</a></h2>
-        <p>Here's a map of US population data from the 2010 US Census along with 
-        some other visualizations using Plotly, Python, and SQL.</p>
+        <h2><a href="/census/">US Census Data Mapping</a></h2>
+        <p>This a project which attempts to uncover interesting and not-so-obvious
+        relationships from the millions of records created by the US Census bureau.
+        </p>
         <p>
-            <a href="/census2010" class="big-button">Yay maps!</a>
-            <a href="https://github.com/vincentlaucsb/North-American-Map" class="big-button-brown">GitHub</a>
+            <a href="/census" class="big-button">Yay maps!</a>
+            <a href="https://github.com/vincentlaucsb/Census-2010" class="big-button-brown">GitHub</a>
         </p>
     </section>
     

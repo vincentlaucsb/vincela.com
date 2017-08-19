@@ -2,6 +2,7 @@
 plugins/
 output/
 content/pages/resume/
+settings.py
 *.bat
 *.sh
 *.jpg

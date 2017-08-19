@@ -3,7 +3,6 @@
 $content-max-width: 100%;
 
 article {
-    font-size: $smaller-size;
     max-width: $content-max-width;
     padding-top: $skip;
     margin-bottom: $big-skip;
@@ -13,6 +12,12 @@ article {
     }
     
     @extend .container;
+    
+    /** Limit how much images can expand **/
+    img {
+        max-width: 90%;
+        max-height: 90%;
+    }
 }
 
 /** Structure **/    
