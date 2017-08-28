@@ -7,6 +7,12 @@ Slug: index
 
 <div id="projects" class="grid-container-nx3">
     <section>
+        <h2><a href="/html">HTML Reference Sheet</a></h2>
+        <p>A reference sheet with the most common HTML constructs with live, editable examples.</p>
+        <p><a href="/reference/html" class="big-button">Learn more</a></p>
+    </section>
+
+    <section>
         <h2><a href="/census/">US Census Data Mapping</a></h2>
         <p>This a project which attempts to uncover interesting and not-so-obvious
         relationships from the millions of records created by the US Census bureau.
@@ -38,13 +44,6 @@ Slug: index
         <!--<img src="{% static 'python-logo-master-v3-TM.png' %}" style="width: 200px" >-->
         <p>Here's a series of tutorials on the Python language.</p>
         <p><a href="/python" class="big-button">Learn more</a></p>
-    </section>
-    
-    <section>
-        <h2><a href="/html">HTML Quick Start Guide</a></h2>
-        <p>If you're not a web developer, but you've found yourself in a 
-        position where you want or need to create a web page, this guide is for you.</p>
-        <p><a href="/html" class="big-button">Learn more</a></p>
     </section>
     
     <!--

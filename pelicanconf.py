@@ -33,6 +33,7 @@ AUTHOR_FEED_RSS = None
 THEME = 'themes/vince-theme'
 MAIN_MENU = (('About', '/#about'),
              ('Projects', '/projects'),
+             ('Statistics', '/statistics'),
              ('Resume', '/resume'))
 
 # Blogroll
