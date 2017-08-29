@@ -3,9 +3,6 @@ plugins/
 output/
 content/pages/resume/
 settings.py
-*.bat
-*.sh
-*.jpg
 
 # SASS
 themes/vince-theme/static/.sass-cache

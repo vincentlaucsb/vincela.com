@@ -7,6 +7,14 @@ Slug: index
 
 <div id="projects" class="grid-container-nx3">
     <section>
+        <h2><a href="https://github.com/vincentlaucsb/pgreaper">pgreaper</a></h2>
+        <p>A tool for uploading data from CSV, JSON, HTML and SQLite sources into PostgreSQL databases.</p>
+        <p>
+            <a href="" class="big-button">PyPI</a>
+            <a href="https://github.com/vincentlaucsb/pgreaper" class="big-button-brown">GitHub</a></p>
+    </section>
+
+    <section>
         <h2><a href="/html">HTML Reference Sheet</a></h2>
         <p>A reference sheet with the most common HTML constructs with live, editable examples.</p>
         <p><a href="/reference/html" class="big-button">Learn more</a></p>
@@ -37,13 +45,6 @@ Slug: index
         <p>This is a collection of attempted homeworks for UCSB'S PSTAT 160A course. The assignments consisted mainly of writing Python code and 
         creating graphs for modelling different random processes and probability theorems.</p>
         <p><a href="/pstat160a" class="big-button">Learn more</a></p>
-    </section>
-    
-    <section>
-        <h2><a href="../python/">Python Tutorials</a></h2>
-        <!--<img src="{% static 'python-logo-master-v3-TM.png' %}" style="width: 200px" >-->
-        <p>Here's a series of tutorials on the Python language.</p>
-        <p><a href="/python" class="big-button">Learn more</a></p>
     </section>
     
     <!--

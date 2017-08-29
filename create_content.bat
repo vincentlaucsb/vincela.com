@@ -1,0 +1,2 @@
+pelican -r content
+pause
