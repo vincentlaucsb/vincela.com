@@ -34,7 +34,8 @@ THEME = 'themes/vince-theme'
 MAIN_MENU = (('About', '/#about'),
              ('Projects', '/projects'),
              ('Statistics', '/statistics'),
-             ('Resume', '/resume'))
+             ('Resume', '/resume'),
+             ('Random', '/random'))
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -60,3 +61,6 @@ ARTICLE_SAVE_AS = '{pathto}/index.html'
 
 PAGE_URL = '{pathto}/'
 PAGE_SAVE_AS = '{pathto}/index.html'
+
+# Order articles by filename
+ARTICLE_ORDER_BY = 'source_path'

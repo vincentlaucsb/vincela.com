@@ -10,24 +10,29 @@ Slug: index
         <h2><a href="https://github.com/vincentlaucsb/pgreaper">pgreaper</a></h2>
         <p>A tool for uploading data from CSV, JSON, HTML and SQLite sources into PostgreSQL databases.</p>
         <p>
+            <a href="/pgreaper" class="big-button">RTFM</a>
             <a href="" class="big-button">PyPI</a>
             <a href="https://github.com/vincentlaucsb/pgreaper" class="big-button-brown">GitHub</a></p>
     </section>
 
     <section>
+        <h2><a href="/html">University of California Employee Salaries</a></h2>
+        <p>...</p>
+        <p><a href="/uc-salaries" class="big-button">Learn more</a></p>
+    </section>
+    
+    <section>
         <h2><a href="/html">HTML Reference Sheet</a></h2>
         <p>A reference sheet with the most common HTML constructs with live, editable examples.</p>
         <p><a href="/reference/html" class="big-button">Learn more</a></p>
     </section>
-
+    
     <section>
-        <h2><a href="/census/">US Census Data Mapping</a></h2>
-        <p>This a project which attempts to uncover interesting and not-so-obvious
-        relationships from the millions of records created by the US Census bureau.
+        <h2><a href="https://github.com/vincentlaucsb/UCSB-MATH-122AB--Complex-Variables">UCSB MATH 122AB &mdash; Complex Variables</a></h2>
+        <p>Notes from a summer spent studying complex analysis.
         </p>
         <p>
-            <a href="/census" class="big-button">Yay maps!</a>
-            <a href="https://github.com/vincentlaucsb/Census-2010" class="big-button-brown">GitHub</a>
+            <a href="https://github.com/vincentlaucsb/UCSB-MATH-122AB--Complex-Variables" class="big-button">Re(z) + Im(z)</a>
         </p>
     </section>
     

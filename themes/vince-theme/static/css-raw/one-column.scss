@@ -13,8 +13,10 @@ article {
     
     @extend .container;
     
-    /** Limit how much images can expand **/
-    img {
+    /** Limit how much images can expand
+     ** But exclude Leaflet image tiles
+     **/
+    img:not(.leaflet-tile leaflet-tile-loaded){
         max-width: 90%;
         max-height: 90%;
     }

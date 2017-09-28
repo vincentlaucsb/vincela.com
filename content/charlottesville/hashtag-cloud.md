@@ -3,6 +3,7 @@ Date: 2017-08-18
 Modified: 2017-08-18 1809
 Tags: python
 Authors: Vincent La
+sortorder: 1
 
 ## Building a Word Cloud
 Any good statistical analysis begins with good exploratory data analysis. In addition to keying us in to things we may have never thought of, EDA can also be a valuable piece of the analysis itself. It's also a lot of fun!

@@ -5,6 +5,7 @@ Authors: Vincent La
 Slug: html
 Template: html
 Summary: A quick guide to the building blocks of HTML
+sortorder: 1
 
 <!--
   _______  _______  _            _______  _______  _             

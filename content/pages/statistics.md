@@ -25,6 +25,8 @@ Slug: stats
         <p>
             <a href="http://vincela.com/uc-salaries/report.pdf" class="big-button">
                 Read the Report</a>
+            <a href="http://vincela.com/uc-salaries/" class="big-button">
+                Data Visualizer</a>
             <a href="https://github.com/vincentlaucsb/UC-Employee-Salaries/tree/master/cleaned_data"
                 class="big-button">
                 Data Download</a>
@@ -47,7 +49,8 @@ Slug: stats
         mentioning "Charlottesville" or containing "#charlottesville."</p>
         <p>
             <a href="/charlottesville" class="big-button">Read More</a>
-            <a href="https://www.kaggle.com/vincela9/charlottesville-on-twitter" class="big-button">Data Download</a>
+            <a href="/charlottesville/data" class="big-button">Data Download</a>
+            <a href="https://www.kaggle.com/vincela9/charlottesville-on-twitter" class="big-button">Kaggle</a>
         </p>
     </section>
 </div>

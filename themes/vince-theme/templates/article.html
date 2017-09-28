@@ -12,13 +12,17 @@
 
     {{ article.content }}
     
-    <h2>Related Content</h2>
+    <h2>Keep Reading</h2>
     <ul>
     <!-- Is this the best way to get all pages in a category from an article? -->
     {% for category in categories %}
         {% if category.0 == article.category %}
-            {% for article in category.1 %}
-            <li><a href="/{{ article.url }}">{{ article.title }}</a></li>
+            {% for art in category.1|sort(attribute='source_path') %}
+                {% if art.title == article.title %}
+                <li><b>{{ art.title }}</b></li>
+                {% else %}
+                <li><a href="/{{ art.url }}">{{ art.title }}</a></li>
+                {% endif %}
             {% endfor %}
         {% endif %}
     {% endfor %}
