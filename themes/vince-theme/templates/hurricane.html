@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category.page.title }}{% endblock %}
+
+{% block more_head %}
+<link href='/theme/css/one-column.css' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block page_title %}{{ category.page.title }}{% endblock %}
+
+{% block content %}
+    <div style="width: 100em">
+        <img src="images/hurricane/New_Orleans_Survivor_Flyover.jpg"></img>
+    </div>
+    
+    <h2>Contents</h2>
+    <ul>
+    {% for article in articles|sort(attribute='source_path') %}
+        <li><a href="/{{ article.url }}">{{ article.title }}</a></li>
+    {% endfor %}
+    </ul>
+
+    {{ category.page.content }}
+{% endblock %}

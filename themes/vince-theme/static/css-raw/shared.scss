@@ -125,6 +125,14 @@ header {
 
 /** End of Header **/
 
+/** Page Title **/
+.page-info {
+    display: block;
+    font-size: $small-size;
+}
+
+/** End of Page Title **/
+
 /** Footer **/
 footer {
     font-size: $small-size;
@@ -198,6 +206,12 @@ th {
 }
 
 /** End of Tables **/
+
+/** Blockquotes **/
+blockquote {
+    margin-left: $big-skip;
+}
+/** End of Blockquotes **/
 
 /** Code Blocks **/
 pre {

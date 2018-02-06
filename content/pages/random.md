@@ -3,7 +3,6 @@ Date: 2017-09-23
 Category: Statistics
 Authors: Vincent La
 Template: projects
-Slug: random
 
 <div id="projects">
     <section>
