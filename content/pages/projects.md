@@ -5,7 +5,17 @@ Authors: Vincent La
 Template: projects
 
 <h2>Software</h2>
+<p>Below are mostly libraries that I have written for personal projects, but would like to share. Although it is far from an inclusive list of all the code I have written, it represents some of my better work.</p>
 <div id="projects" class="grid-container-nx3">
+    <section>
+        <h3>
+            <a href="https://github.com/vincentlaucsb/svg">SVG for C++</a>
+        </h3>
+        <p>A library which makes it easier to create SVG graphics within a C++ program. It combines a simple API with handy features like calculating bounding boxes.</p>
+        <p>
+            <a href="https://github.com/vincentlaucsb/svg" class="big-button-brown">GitHub</a>
+        </p>
+    </section>
     <section>
         <h3>
             <a href="https://github.com/vincentlaucsb/csv-parser">CSV Parser</a>
@@ -24,6 +34,11 @@ Template: projects
             <a href="https://github.com/vincentlaucsb/sqlite-cpp" class="big-button-brown">GitHub</a>
         </p>
     </section>
+</div>
+
+<h3>Shelved Projects</h3>
+<p>These projects haven't seen the light of day in a while, and probably won't anytime soon.</p>
+<div class="grid-container-nx3">    
     <section>
         <h3>
             <a href="https://github.com/vincentlaucsb/shuffle">shuffle</a>
@@ -37,6 +52,11 @@ Template: projects
 
 <h2>Class Projects</h2>
 <div class="grid-container-nx3">
+    <section>
+        <h3>UCSB Senior Thesis &mdash; Graph Drawing</h3>
+        <p>More to come...</p>
+        <p></p>
+    </section>
     <section>
         <h3><a href="/pstat160a">Stochastic Processes</a></h3>
         <p>This is a collection of attempted homeworks for UCSB'S PSTAT 160A course. The assignments consisted mainly of writing Python code and 
