@@ -1,9 +1,10 @@
-# http://www.vincela.com/
-## Depedencies
-The only dependency of my website is Pelican, a static website generator for Python.
+# My Website
+http://www.vincela.com/
 
-### Okay... I lied a little
-Parts of my website, like the interactive UC Salary visualizer are powered by Django and you can find the code for them in their respective repositiories.
+## Powered by Pelican
+My website is generated via Pelican, a static site generator written in Python.
 
 ## CSS
-My website, or at least most of it, is powered by hand-crafted CSS which you can find [here](https://github.com/vincentlaucsb/vincela.com/tree/master/themes/vince-theme/static/css-raw). It is actually written in SASS, which is actually a superset of CSS that makes writing stylesheets tolerable and even... fun. SASS requires a free, open-source compiler which turns your SASS into regular CSS that browsers can interpret.
+My website is laid out according to hand-crafted CSS which you can find [under /themes/vince-theme/](https://github.com/vincentlaucsb/vincela.com/tree/master/themes/vince-theme/static/css-raw). The CSS is itself generated from SCSS stylesheets.
+
+For those of you not in the know, SCSS is a superset of CSS which makes it a lot more tolerable to build stylesheets.
