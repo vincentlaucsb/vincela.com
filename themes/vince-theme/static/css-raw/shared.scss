@@ -170,7 +170,7 @@ footer {
     }
     
     /* Social Media Buttons */
-    img {
+    img, svg {
         opacity: 0.5;
         height: 32px;
         margin: auto 4px auto auto;
@@ -246,3 +246,16 @@ pre {
 
 }
 /** End of Code Blocks **/
+
+/** Common Classes **/
+// A class that centers itself within its parent and its immediate children
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.centered > * {
+    text-align: center;
+    @extend .centered;
+}

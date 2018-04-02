@@ -1,3 +1,7 @@
+/** Buttons
+ *  A collection of buttons used throughout my website
+ */
+
 @import 'colors';
 
 .big-button-base {
@@ -9,7 +13,7 @@
        Top padding is less than bottom padding due to optical illusions */
     padding: 0.35em 0.6em 0.4em 0.6em;
     
-    /*  Goal: Increase clickable area (implement when I find out how rounding works)
+    /* Goal: Increase clickable area (implement when I find out how rounding works)
     border: 5px solid transparent;
     background-clip: padding-box;
     */
@@ -36,8 +40,13 @@
 }
 .big-button-brown:hover { background-color: $dirt; }
 
+// Special rules for the black GitHub logos
+.big-button-brown > img {
+    margin-bottom: 0;
+    filter: invert(100%);
+}
+
 button { @extend .big-button; }
-button:hover { @extend .big-button:hover; }
 
 /** Transitions **/
 button, .big-button, .big-button-brown {

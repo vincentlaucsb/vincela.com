@@ -31,10 +31,12 @@ AUTHOR_FEED_RSS = None
 
 # Custom Theme
 THEME = 'themes/vince-theme'
-MAIN_MENU = (('About', '/#about'),
+MAIN_MENU = (
+             ('About', '/#about'),
+             ('Blog', '/blog'),
              ('Projects', '/projects'),
-             ('Resume', '/resume'),
-             ('Random', '/random'))
+             ('Resume', '/resume')
+            )
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
