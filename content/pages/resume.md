@@ -20,7 +20,7 @@ Template: resume
 
  * Minor in Statistical Science *(in progress)* including graduate data mining and time series analysis
  * Tutored math (calculus, discrete math, etc.) and computer science (intro to C++/Unix shell)
- * Other relevant coursework: database management systems
+ * Relevant coursework: data structures and algorithms, database management systems
  
 ## Technical Skills
 
@@ -36,6 +36,13 @@ Template: resume
 ## Projects
 **GitHub:** [https://github.com/vincentlaucsb](https://github.com/vincentlaucsb)
 
+### An Exploration of Graph Drawing Algorithms (UCSB Math Senior Thesis)
+[http://vincela.com/projects/](http://vincela.com/projects/)
+
+ * Currently in progress
+ * Researched and implemented several graph drawing algorithms in C++
+ * An exploration of the history, motivations, and mathematical properties of graph drawing
+
 ### Stock Trader (CS 174A Course Project)
 (Code is on a private school-hosted Git repository)
 
@@ -50,13 +57,7 @@ Template: resume
 
  * A multi-threaded CSV parser written in C++11 with a simple and powerful API
  * Can reliably guess delimiters, parse data types, and calculate statistics on arbitrarily large files
- * 96% code (statement) coverage
- 
- 
-### Stochastic Processes (PSTAT 160A Course Work)
-[https://github.com/vincentlaucsb/Stochastic-Processes](https://github.com/vincentlaucsb/Stochastic-Processes)
-
- * Python code simulating discrete time stochastic processes and other related probabilty models
+ * 96% code (statement) coverage 
  
 ## Work Experience
 ### ONDAS Student Center <span>Winter &mdash; Spring 2017</span>

@@ -1,16 +1,15 @@
 {% extends "base.html" %}
 {% import '_include.html' as include with context %}
 
-{% block title %}{{ category.page.title }}{% endblock %}
+{% block title %}Tag: {{ tag }}{% endblock %}
 
 {% block more_head %}
 <link href='/theme/css/one-column.css' rel='stylesheet' type='text/css'>
 {% endblock %}
 
-{% block page_title %}{{ category.page.title }}{% endblock %}
+{% block page_title %}Tag: {{ tag }}{% endblock %}
 
 {% block content %}
-    {{ category.page.content }}
     {% for article in articles %}
         {{ include.list_article(article) }}
     {% endfor %}

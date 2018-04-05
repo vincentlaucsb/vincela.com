@@ -1,0 +1,18 @@
+<!-- A collection of common macros -->
+
+{% macro article_time(article) %}
+<time datetime="{{ article.date.isoformat() }}" pubdate>{{ article.locale_date }}</time>
+{% endmacro %}
+
+{% macro list_article(article) %}
+    <h2>
+        <a href="/{{ article.url }}">{{ article.title }}</a>
+        <span style="float: right; font-size: 12pt;">{{ article_time(article) }}</span>
+    </h2>
+    <p>{{ article.summary }}</p>
+    <p style="font-size: 0.9em;">Filed Under:
+    {% for tag in article.tags %}
+        <a href="/tag/{{ tag }}.html">{{ tag }}{% if tag != article.tags[-1] %},{% endif %}</a>
+    {% endfor %}
+    </p>
+{% endmacro %}
