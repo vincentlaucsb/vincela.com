@@ -16,32 +16,29 @@ Template: resume
 
 ## Education
 ### University of California, Santa Barbara <span>2013 - 2018 *(expected)*</span>
-*BA &mdash; Mathematics*
+*BA Mathematics &mdash; 3.3 GPA*
 
+ * **CS Coursework** (upper division): data structures and algorithms, database management systems, teaching computer science
  * Minor in Statistical Science *(in progress)* including graduate data mining and time series analysis
- * Tutored math (calculus, discrete math, etc.) and computer science (intro to C++/Unix shell)
- * Relevant coursework: data structures and algorithms, database management systems
  
 ## Technical Skills
 
- * Operating Systems: Windows, Linux
- * Software: Nginx, Makefiles, Visual Studio, IntelliJ, MySQL, PostgreSQL
- <ul>
-    <li>Languages: C++, Java, Python, R, SQL</li>
-    <li>Python: numpy, matplotlib, PANDAS</li>
-    <li>Java: JUnit, JDBC</li>
+ * Languages: C++, Java, Python, R, SQL, Bash scripting, Procedural SQL
+    * Java: JUnit, JDBC
+    * Python: numpy, matplotlib, PANDAS
+ * Software: Visual Studio, IntelliJ, MySQL, PostgreSQL, CMake, Makefile, Nginx
+ * Operating Systems: Linux, Windows
  </ul>
- * Off the beaten path: Shell scripting, procedural SQL
 
 ## Projects
 **GitHub:** [https://github.com/vincentlaucsb](https://github.com/vincentlaucsb)
 
 ### An Exploration of Graph Drawing Algorithms (UCSB Math Senior Thesis)
-[http://vincela.com/projects/](http://vincela.com/projects/)
+[http://vincela.com/projects/](http://vincela.com/projects/) &mdash; *in progress*
 
- * Currently in progress
- * Researched and implemented several graph drawing algorithms in C++
+ * Independently researched and implemented several graph drawing algorithms in C++
  * An exploration of the history, motivations, and mathematical properties of graph drawing
+ * Will include several original proofs of interesting theorems
 
 ### Stock Trader (CS 174A Course Project)
 (Code is on a private school-hosted Git repository)

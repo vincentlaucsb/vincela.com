@@ -89,6 +89,17 @@ ul {
 /* End of list styling */
 
 /* Responsive CSS Settings */
+@page {
+  size: 8.5in 11in;
+  margin: 0.5in;
+}
+
+@media print {
+    body {
+        margin: 0% 5% 0% 5%;
+    }
+}
+
 @media screen and (max-width: 700px) {
     body {
         margin-left: 5%;
