@@ -10,7 +10,9 @@ Template: resume
     </div>
     <div id="contact">
         <a href="mailto:vincela9@gmail.com">vincela9@gmail.com</a> <span id="phone">(510) 759-4305</span></br>
-        <a href="https://www.linkedin.com/in/vincent-la-sb">www.linkedin.com/in/vincent-la-sb</a></br >
+        <a href="https://www.linkedin.com/in/vincent-la-sb/">www.linkedin.com/in/vincent-la-sb/</a>
+        <a href="http://www.vincela.com/">www.vincela.com/</a>
+        </br >
     </div>
 </header>
 
@@ -21,44 +23,37 @@ Template: resume
  * **CS Coursework** (upper division): data structures and algorithms, database management systems, teaching computer science
  * Minor in Statistical Science *(in progress)* including graduate data mining and time series analysis
  
-## Technical Skills
+## Technical Skills <span>a non-inclusive list</span>
 
- * Languages: C++, Java, Python, R, SQL, Bash scripting, Procedural SQL
-    * Java: JUnit, JDBC
-    * Python: numpy, matplotlib, PANDAS
- * Software: Visual Studio, IntelliJ, MySQL, PostgreSQL, CMake, Makefile, Nginx
- * Operating Systems: Linux, Windows
+ * **Primary Languages:** C++, Java, Python, SQL
+ * Secondary Languages: R, JavaScript, CSS/SASS, LaTeX, Bash scripting, Procedural SQL
+ * Software/OS: Visual Studio, IntelliJ, MySQL, PostgreSQL, CMake, Makefile, Nginx, Linux, Windows
  </ul>
 
-## Projects
-**GitHub:** [https://github.com/vincentlaucsb](https://github.com/vincentlaucsb)
+## Projects <span>[https://github.com/vincentlaucsb/](https://github.com/vincentlaucsb/)</span>
 
 ### An Exploration of Graph Drawing Algorithms (UCSB Math Senior Thesis)
 [http://vincela.com/projects/](http://vincela.com/projects/) &mdash; *in progress*
 
  * Independently researched and implemented several graph drawing algorithms in C++
- * An exploration of the history, motivations, and mathematical properties of graph drawing
- * Will include several original proofs of interesting theorems
+ * An exploration of the mathematical properties of graph drawing with several original proofs of interesting theorems
 
 ### Stock Trader (CS 174A Course Project)
-(Code is on a private school-hosted Git repository)
 
- * Designed and implemented a MySQL database and Java-based command line interface for a mock stock trading system
+ * Designed and implemented a MySQL database and Java command line interface for a mock stock trading system
  * Utilized JDBC to report data, and MySQL procedures and triggers to ensure data integrity
  * Created unit and integration tests for both interface and database logic
- * Received a final grade of an A
 
 
 ### CSV Parser
-[https://github.com/vincentlaucsb/csv-parser](https://github.com/vincentlaucsb/csv-parser)
+[https://github.com/vincentlaucsb/csv-parser](https://github.com/vincentlaucsb/csv-parser) &mdash; 96% code coverage
 
  * A multi-threaded CSV parser written in C++11 with a simple and powerful API
  * Can reliably guess delimiters, parse data types, and calculate statistics on arbitrarily large files
- * 96% code (statement) coverage 
  
 ## Work Experience
 ### ONDAS Student Center <span>Winter &mdash; Spring 2017</span>
 *Peer Tutor &ndash; University of California, Santa Barbara*
 
- * Worked as a front-desk receptionist and tutor for a center dedicated to helping first-generation college students succeed
+ * Worked as a tutor and receptionist for a center dedicated to helping first-generation college students succeed
  * Tutored fellow students in math, economics, and statistics

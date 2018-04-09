@@ -22,11 +22,18 @@ body, a {
 a:hover { text-decoration: underline; }
 
 h1, h2, h3, header { font-family: $sans-serif; }
-h2 { border-bottom: 1px solid darken($light-gray, 10%);
-text-transform: uppercase;
-letter-spacing: -0.05em;
-}
 h2, h3, h4 { font-weight: 500; }
+h2 {
+    border-bottom: 1px solid darken($light-gray, 10%);
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    
+    // Make <span> elements hug bottom border
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
 
 #name h1 {
     font-size: 3em;
@@ -40,17 +47,14 @@ h3 + p {
     margin-top: 0;
 }
 
-h3 > span {
+h2 > span, h3 > span {
+    text-transform: none;
     font-weight: normal;
-    font-size: 90%;
     float: right;
 }
 
-/* Subtitles: Make them closer to the title */
-
-/* Tighten up spacing between elements */
-h2 + h3 { margin-top: $small-skip/2; }
-h3, h4 { margin-top: $small-skip; }
+h2 > span { font-size: 70%; }
+h3 > span { font-size: 90%; }
 
 p, ul {
     margin-top: $small-skip/2;
@@ -73,11 +77,16 @@ header {
 }
 
 #name { line-height: 1; }
-#phone { margin-left: 1.5em; }
+header a + a, #phone { margin-left: 1.5em; }
 /* End Header */
 
 /* Resume Body */
 h2 { margin-top: $big-skip; }
+
+// Tighten up spacing between elements
+h2 + h3 { margin-top: $small-skip/2; }
+h3, h4 { margin-top: $small-skip; }
+
 /* End of Resume Body */
 
 /* General List Styling */
@@ -96,8 +105,20 @@ ul {
 
 @media print {
     body {
-        margin: 0% 5% 0% 5%;
+        margin: 0%;
+        max-width: 100%;
     }
+    
+    header { margin-bottom: 2em; }
+    
+    // Make name appear on one line
+    #name br {
+        display: none;
+    }
+    
+    /* Resume Body: Tighten up spacing even more */
+    h2 { margin-top: $big-skip/2; }
+    /* End of Resume Body */
 }
 
 @media screen and (max-width: 700px) {
