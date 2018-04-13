@@ -4,7 +4,7 @@ body {
     font-family: $serif;
     font-size: $small-size;
     max-width: 45em;
-    line-height: 1.55;
+    line-height: 1.4;
     margin: $big-skip auto 10% auto;
     background-color: $light-gray;
 }
@@ -97,6 +97,12 @@ ul {
 }
 /* End of list styling */
 
+p#brag {
+    position: fixed;
+    bottom: 0;
+    font-size: 12px;
+}
+
 /* Responsive CSS Settings */
 @page {
   size: 8.5in 11in;
@@ -105,6 +111,7 @@ ul {
 
 @media print {
     body {
+        font-size: 13px;
         margin: 0%;
         max-width: 100%;
     }
