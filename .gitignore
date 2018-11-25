@@ -1,11 +1,9 @@
 # My Own
-plugins/
 output/
-content/pages/resume/
-settings.py
+.vs/
 
 # SASS
-themes/vince-theme/static/.sass-cache
+.sass-cache/
 *.map
 
 # Byte-compiled / optimized / DLL files

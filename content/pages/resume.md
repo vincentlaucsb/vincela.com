@@ -1,6 +1,6 @@
 Title: Resume
 Date: 2017-04-04 2:21
-Modified: 2018-01-25 12:04
+Modified: 2018-11-24
 Authors: Vincent La
 Template: resume
 
@@ -9,7 +9,7 @@ Template: resume
         <h1><a href="../">Vincent <!-- Looks terrible don't do it: <span style="font-weight: normal">--><br />La<!--</span>--></a></h1>
     </div>
     <div id="contact">
-        <a href="mailto:vincela9@gmail.com">vincela9@gmail.com</a> <span id="phone">(510) 759-4305</span></br>
+        <a href="mailto:vincela9@gmail.com">vincela9@gmail.com</a></br>
         <a href="https://www.linkedin.com/in/vincent-la-sb/">www.linkedin.com/in/vincent-la-sb</a>
         <a href="http://www.vincela.com/">www.vincela.com</a>
         </br >

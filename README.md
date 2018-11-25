@@ -4,6 +4,8 @@ http://www.vincela.com/
 ## Powered by Pelican
 My website is generated via Pelican, a static site generator written in Python.
 
+Building: `make.bat`
+
 ## CSS
 My website is laid out according to hand-crafted CSS which you can find [under /themes/vince-theme/](https://github.com/vincentlaucsb/vincela.com/tree/master/themes/vince-theme/static/css-raw). The CSS is itself generated from SCSS stylesheets.
 

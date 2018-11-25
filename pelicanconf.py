@@ -6,6 +6,8 @@ AUTHOR = 'Vincent La'
 SITENAME = 'Vincent La'
 SITEURL = ''
 
+STATIC_PATHS = ['images']
+
 PATH = 'content'
 PAGE_PATHS = ['pages']
 PATH_METADATA = r'(pages/)?(?P<pathto>.*)[\.]'
@@ -32,7 +34,7 @@ AUTHOR_FEED_RSS = None
 # Custom Theme
 THEME = 'themes/vince-theme'
 MAIN_MENU = (
-             ('About', '/#about'),
+             ('About', '/about'),
              ('Blog', '/blog'),
              ('Projects', '/projects'),
              ('Resume', '/resume')

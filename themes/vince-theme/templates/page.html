@@ -17,20 +17,6 @@ header.header-fixed {
     {{ translations.translations_for(page) }}
 
     {{ page.content }}
-
-    {% if page.category %}
-        <h2>Other Pages in {{ page.category }}</h2>\
-        <ul>
-            {% for item in categories %}
-                {{ item }}
-                {% if item.0 == page.category %}
-                    {% for page in item.1 %}
-                    <li>{{ page }}</li>
-                    {% endfor %}
-                {% endif %}
-            {% endfor %}
-        </ul>
-    {% endif %}
     
 	{% if page.modified %}
 		<p>
