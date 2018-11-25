@@ -42,8 +42,8 @@ A visualization of American commute times
 
 A library for creating SVG graphics from C++ applications
 
-[GitHub](https://github.com/vincentlaucsb/svg)
-[Documentation](https://github.com/vincentlaucsb/svg)
+[[GitHub]](https://github.com/vincentlaucsb/svg)
+[[Documentation]](https://github.com/vincentlaucsb/svg)
 
 ## Graveyard
 A pile of abandoned software.
@@ -51,11 +51,11 @@ A pile of abandoned software.
 ### SQLite for C++
 A memory-safe wrapper around the SQLite API for C++
 
-[GitHub](https://github.com/vincentlaucsb/sqlite-cpp)
-[Documentation](https://vincentlaucsb.github.io/sqlite-cpp/)
+[[GitHub]](https://github.com/vincentlaucsb/sqlite-cpp)
+[[Documentation]](https://vincentlaucsb.github.io/sqlite-cpp/)
 
 
 ### CSV Toolkit
 A family of command line tools for working with CSV files
 
-[GitHub](https://github.com/vincentlaucsb/csv-toolkit)
+[[GitHub]](https://github.com/vincentlaucsb/csv-toolkit)

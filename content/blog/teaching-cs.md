@@ -9,4 +9,4 @@ Category: blog
 As my final assignment for UCSB's CS 190J, I had to write an essay about my experiences teaching.
 The course I taught was an introductory programming course using C++ (CS 16).
 
-<iframe src="CS190J - Final Paper.pdf" style="width: 100%; height: 100vh"></iframe>
+<iframe src="/assets/CS190J - Final Paper.pdf" style="width: 100%; height: 100vh"></iframe>

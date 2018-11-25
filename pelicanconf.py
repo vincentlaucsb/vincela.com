@@ -6,7 +6,7 @@ AUTHOR = 'Vincent La'
 SITENAME = 'Vincent La'
 SITEURL = ''
 
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['assets', 'images']
 
 PATH = 'content'
 PAGE_PATHS = ['pages']
