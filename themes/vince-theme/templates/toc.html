@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block more_head %}
+<script src="/theme/js-toc/dist/toc.js"></script>
+<script>
+    window.addEventListener("load", function (event) {
+        makeList({
+            'target': '#toc',   // Selector for element to place table of contents
+            'parent': 'article' // Selector for element to parse headers from (default: 'body')
+        });
+    });
+</script>
+<style type="text/css">
+    article img {
+        max-width: 50%;
+    }
+</style>
+{% endblock %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block page_title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+<!-- TODO: Fix this temporary styling -->
+<div id="toc" style="
+    float: right; 
+    max-width: 40%;
+    background: #eeeeee;
+    padding: 1em;"
+>
+    <b>On This Page</b>
+</div>
+{{ page.content }}
+{% endblock %}

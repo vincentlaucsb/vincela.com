@@ -1,0 +1,3 @@
+[submodule "themes/vince-theme/static/js-toc"]
+	path = themes/vince-theme/static/js-toc
+	url = https://github.com/vincentlaucsb/js-toc.git
