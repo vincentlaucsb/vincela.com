@@ -25,7 +25,6 @@ $skip:       1.5em;   /* Used for separating groups of text */
 $small-skip: 0.9em;   /* Used for separating elements in the same "group" */
 
 /* Mixins */
-
 @mixin margin-lr($value) {
     margin-left: $value;
     margin-right: $value;
@@ -36,35 +35,24 @@ $small-skip: 0.9em;   /* Used for separating elements in the same "group" */
     margin-bottom: $value;
 }
 
-@mixin container-width($width) {
-    /* Specifies the width of the page's main containers
-     * ------------------------------------------------------------
-     * Rule:
-     * Header, footer, and footer content should all have the same
-     * left, right margins */
-    header, #title {
-        width: $width;
-    }
-    
-    header, #title, article, #section-menu, footer {
-        padding-left: (100% - $width)/2;
-        padding-right: (100% - $width)/2;
-    }
+@mixin padding-lr($value) {
+    padding-left: $value;
+    padding-right: $value;
 }
 
+@mixin padding-tb($value) {
+    padding-top: $value;
+    padding-bottom: $value;
+}
 
 /* Base Classes */
+.base {
+    @include padding-lr(2.5vw);
+}
 
-.container {
-    /* Base class for any container used for storing a page's main content */
-    h2 { margin-top: $skip; }
-    h3, h4 { margin-top: $small-skip; }
-    
-    p, pre, ul, ol, table, iframe  {
-        margin-top: $small-skip;
-        margin-bottom: $small-skip;
-    }
-    
-    /* Remove margins for uls nested in other lists */
-    li ul { margin: 0; }
+.wide {
+    @extend .base;
+    width: 95vw;
+    display: flex;
+    flex-direction: row;
 }

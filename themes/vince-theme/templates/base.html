@@ -63,36 +63,41 @@
     </header>
 
     <!-- title_class options are "title-big" and "title-regular" -->
-    <div id="title" class="{% block title_class %}title-regular{% endblock %}">
-        {% block breadcrumbs %}{% endblock %}
-        <h1>{% block page_title %}{% endblock %}</h1>
+    <div id="main">
+        <div id="title" class="{% block title_class %}title-regular{% endblock %}">
+            {% block breadcrumbs %}{% endblock %}
+            <h1>{% block page_title %}{% endblock %}</h1>
+        </div>
+
+        <!-- Main content goes here -->
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <article>
+                {% block content %}{% endblock %}
+            </article>
+            <div id="sidebar">
+                {% block sidebar %}{% endblock %}
+            </div>
+        </div>
     </div>
     
-    <!-- Main content goes here -->
-    <article>
-        {% block content %}{% endblock %}
-    </article>
-    
     <footer>
-        <nav>
-            {% for link in MAIN_MENU %}
-                <a href="{{ link[1] }}">{{ link[0] }}</a>
-            {% endfor %}
-        </nav>
-        
-        <h3>Find Me</h3>
-        <p>
-            <a href="https://www.linkedin.com/in/vincent-la-sb"><img src="/theme/images/social-media/linkedin-box.png"></img></a>
-            <a href="https://github.com/vincentlaucsb"><img style="filter: invert(100%);" src="/theme/images/social-media/mark-github.svg"></img></a>
-        </p>
-        
-        <p>
-            &copy; 2016-2018 Vincent La
-            <span style="float: right">
-                <a href="https://blog.getpelican.com/">Powered by Pelican</a>
-                <a href="https://github.com/vincentlaucsb/vincela.com">(Source Code)</a>
-            </span>
-        </p>
+        <div id="footer-left">
+            <div>
+                <span>&copy; 2016-2018 Vincent La</span>
+                <nav>
+                    {% for link in MAIN_MENU %}
+                    <a href="{{ link[1] }}">{{ link[0] }}</a>
+                    {% endfor %}
+                </nav>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/vincent-la-sb"><img src="/theme/images/social-media/linkedin-box.png"></img></a>
+                <a href="https://github.com/vincentlaucsb"><img style="filter: invert(100%);" src="/theme/images/social-media/mark-github.svg"></img></a>
+            </div>
+        </div>
+        <div id="footer-right">
+            <a href="https://blog.getpelican.com/">Powered by Pelican</a>
+        </div>
     </footer>
 </body>
 </html>

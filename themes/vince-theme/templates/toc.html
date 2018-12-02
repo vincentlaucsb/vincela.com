@@ -4,8 +4,8 @@
 <script>
     window.addEventListener("load", function (event) {
         makeList({
-            'target': '#toc',   // Selector for element to place table of contents
-            'parent': 'article' // Selector for element to parse headers from (default: 'body')
+            'target': '#toc',    // Selector for element to place table of contents
+            'parent': 'article'  // Selector for element to parse headers from (default: 'body')
         });
     });
 </script>
@@ -20,14 +20,11 @@
 {% block page_title %}{{ page.title }}{% endblock %}
 
 {% block content %}
-<!-- TODO: Fix this temporary styling -->
-<div id="toc" style="
-    float: right; 
-    max-width: 40%;
-    background: #eeeeee;
-    padding: 1em;"
->
+{{ page.content }}
+{% endblock %}
+
+{% block sidebar %}
+<div id="toc" style="padding-top: 1em;">
     <b>On This Page</b>
 </div>
-{{ page.content }}
 {% endblock %}

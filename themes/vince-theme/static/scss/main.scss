@@ -1,7 +1,6 @@
 @import 'colors';
 @import 'buttons';
 @import 'headers';
-@import 'grids';
 
 /* Used by all every page on my website */
 body {
@@ -12,6 +11,14 @@ body {
     font-size: $regular-size;
     line-height: 1.55;
     color: lighten($charcoal, 5%);
+    
+    /* Make footer appear on bottom, even if main content isn't tall enough to 
+     * cover entire page
+     */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 /* Add margins as needed */
@@ -65,35 +72,29 @@ h5 { font-size: 1.1em; }
 
 /** End Header Fonts **/
 
-/** Transitions **/
-header, footer, #title, article {
-    transition: width 2s, padding 2s;
-}
-/** End Transitions **/
-
 /** Header **/
 header, footer { font-family: $sans-serif; }
 
 header {
+    @extend .wide;
+    @include padding-tb($small-skip);
     font-size: $smaller-size;
-    color: $white;
-
     background-color: lighten($charcoal, 5%);
-    
-    display: flex;
-    flex-direction: row;
+    color: $white;
     justify-content: space-between;
-    
     line-height: 1;
-    padding-top: $small-skip;
-    padding-bottom: $small-skip;
-    
-    * { color: inherit; }
-    
+
+    * {
+        color: inherit;
+    }
+
     h1 {
         text-transform: uppercase;
-        a:hover { text-decoration: none; }
-        
+
+        a:hover {
+            text-decoration: none;
+        }
+
         span {
             color: darken($sand, 10%);
             letter-spacing: 0.04em;
@@ -102,29 +103,28 @@ header {
 
     nav {
         text-align: right;
-        
+
         a {
             display: inline-block;
             padding: 0.5em 1em 0.5em 1em;
             transition: background-color 1s;
         }
-        
+
         a:hover {
             background-color: lighten($od-green, 5%);
         }
-    }   
+    }
 }
 
-#logo {    
+#logo {
     /* As a flexbox */
     width: 100vw;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: flex-start;
-    padding-top: 1em;
-    padding-bottom: 1em;
     font-size: 1.2em;
+    @include padding-tb(1em);
 }
 
 /** End of Header **/
@@ -139,40 +139,18 @@ header {
 
 /** Footer **/
 footer {
+    @extend .wide;
+    @include padding-tb($small-skip);
     font-size: $small-size;
     color: desaturate($sand, 50%);
     background: $charcoal;
     margin-top: $big-skip;
-    padding-top: $small-skip;
-    padding-bottom: $small-skip;
-    
+    justify-content: space-between;
+
     * {
         font-family: inherit;
         color: inherit;
     }
-    
-    p {
-        margin-top: $small-skip;
-        margin-bottom: $small-skip;
-    }
-    
-    /* Footer Menu */
-    nav {
-        width: 40em;
-        margin: auto;
-        text-align: center;
-        display: block;
-        
-        a {
-            margin: 1em;
-            color: inherit;
-        }
-        
-        a:hover {
-            color: $sand;
-        }
-    }
-    
     /* Social Media Buttons */
     img, svg {
         opacity: 0.5;
@@ -181,7 +159,25 @@ footer {
         transition: opacity 1s;
     }
 
-    img:hover { opacity: 1; }
+    img:hover {
+        opacity: 1;
+    }
+}
+
+#footer-left, #footer-right {
+    /** Vertically center items */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#footer-left {
+    justify-content: flex-start;
+
+    nav {
+        padding: 0 $small-skip;
+        display: inline;
+    }
 }
 /** End of Footer **/
 
@@ -251,26 +247,14 @@ pre {
 }
 /** End of Code Blocks **/
 
-/** Common Classes **/
-// A class that centers itself within its parent and its immediate children
-.centered {
+/** Main Content **/
+#main {
     margin-left: auto;
     margin-right: auto;
-    display: block;
 }
-
-.centered > * {
-    text-align: center;
-    @extend .centered;
-}
-
-/** Main Content **/
-$content-max-width: 100%;
 
 article {
-    @extend .container;
-    max-width: $content-max-width;
-    min-height: 100vh; // Prevent footer from not being at the bottom
+    max-width: 50em;
     padding-top: $skip;
     margin-bottom: $big-skip;
 
@@ -282,14 +266,22 @@ article {
         max-width: 90%;
         max-height: 90%;
     }
+
+    h2 {
+        margin-top: $skip;
+    }
+
+    h3, h4 {
+        margin-top: $small-skip;
+    }
+
+    p, pre, ul, ol, table, iframe {
+        margin-top: $small-skip;
+        margin-bottom: $small-skip;
+    }
 }
 
-/** Structure **/
-@media (max-width: 49.99em) {
-    @include container-width(90%);
+#sidebar {
+    padding-left: $big-skip;
+    max-width: 20em;
 }
-
-@media (min-width: 50em) {
-    @include container-width(80%);
-}
-/** End Structure **/

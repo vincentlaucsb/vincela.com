@@ -5,9 +5,8 @@ header.header-fixed {
 }
 
 #title.title-regular {
-    /* margin-top: header-height (approx) + $big-skip */
     margin-top: (2*$small-skip + 2.2em) + $big-skip;
-    h1 { border-bottom: 2px solid darken($light-gray, 15%); }
+    //h1 { border-bottom: 2px solid darken($light-gray, 15%); }
 }
 
 /* Yuge Titles */
@@ -23,8 +22,6 @@ header.header-fixed {
     justify-content: center;
     
     h1 {
-        /*background: rgba($teal, 0.75);*/
-        
         font-weight: 300;
         text-align: center;
         line-height: 1.2;
