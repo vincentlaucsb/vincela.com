@@ -1,18 +1,18 @@
 [submodule "themes/vince-theme/static/js-toc"]
 	path = themes/vince-theme/static/js-toc
 	url = https://github.com/vincentlaucsb/js-toc.git
-[submodule "auto"]
-	path = output/auto
-	url = https://github.com/vincentlaucsb/Auto-Cost-Calculator.git
-[submodule "csv"]
+[submodule "output/csv"]
 	path = output/csv
 	url = https://github.com/vincentlaucsb/csv-parser.git
-[submodule "usa"]
-	path = output/usa
-	url = https://github.com/vincentlaucsb/US-Map.git
-[submodule "svg"]
+[submodule "output/auto"]
+	path = output/auto
+	url = https://github.com/vincentlaucsb/Auto-Cost-Calculator.git
+[submodule "output/svg"]
 	path = output/svg
 	url = https://github.com/vincentlaucsb/svg.git
-[submodule "sqlite"]
+[submodule "output/sqlite"]
 	path = output/sqlite
 	url = https://github.com/vincentlaucsb/sqlite-cpp.git
+[submodule "output/usa"]
+	path = output/usa
+	url = https://github.com/vincentlaucsb/US-Map.git

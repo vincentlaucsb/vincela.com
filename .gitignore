@@ -1,5 +1,7 @@
 # My Own
-output/
+output/**/*.html
+output/assets
+output/theme
 .vs/
 
 # SASS
