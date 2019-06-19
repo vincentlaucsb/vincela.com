@@ -16,3 +16,6 @@
 [submodule "output/usa"]
 	path = output/usa
 	url = https://github.com/vincentlaucsb/US-Map.git
+[submodule "output/resume"]
+	path = output/resume
+	url = https://github.com/vincentlaucsb/resume.git
